@@ -8,7 +8,7 @@
     <!-- Tipografía Moderna desde Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght=300;400;500;600;700;800&display=swap" rel="stylesheet">
 
     <style>
         /* Variables de Diseño */
@@ -38,16 +38,17 @@
 
         body {
             background-color: var(--bg-light);
-            /* Fondo de Circuitos Eléctricos e Ingeniería de Alta Claridad y Definición */
+            /* Fondo de Circuitos Eléctricos del Cuerpo de la Página */
             background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cpath d='M0 20 H40 V60 H80 V90 H120 M60 0 V40 H20 V80 H60 V120' stroke='%230056b3' stroke-width='1.2' fill='none' stroke-opacity='0.12'/%3E%3Ccircle cx='40' cy='20' r='3.5' fill='%23ffb300' fill-opacity='0.5'/%3E%3Ccircle cx='80' cy='60' r='3.5' fill='%230056b3' fill-opacity='0.4'/%3E%3Ccircle cx='20' cy='80' r='2.5' fill='%23ffb300' fill-opacity='0.4'/%3E%3Ccircle cx='60' cy='40' r='2.5' fill='%230056b3' fill-opacity='0.3'/%3E%3C/svg%3E");
             color: var(--text-dark);
             line-height: 1.6;
         }
 
-        /* Encabezado / Header */
+        /* Encabezado / Header con Fondo de Nodos Eléctricos Integrado */
         header {
             background-color: var(--primary-color);
-            padding: 0.6rem 6%;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cpath d='M0 30 H30 V60 H70 V90 H100 M60 0 V40 H20 V80 H60 V100' stroke='%23ffffff' stroke-width='1.2' fill='none' stroke-opacity='0.15'/%3E%3Ccircle cx='30' cy='30' r='3.5' fill='%23ffb300' fill-opacity='0.7'/%3E%3Ccircle cx='70' cy='60' r='3.5' fill='%23ffffff' fill-opacity='0.6'/%3E%3C/svg%3E");
+            padding: 0.5rem 6%;
             position: sticky;
             top: 0;
             z-index: 1000;
@@ -57,35 +58,33 @@
             box-shadow: var(--shadow-md);
         }
 
-        /* Contenedor del Logotipo e Identidad Superior */
+        /* Contenedor del Logotipo Completamente Limpio (Sin fondo blanco) */
         .header-logo-box {
-            background-color: var(--white);
-            padding: 0.5rem 1.5rem;
-            border-radius: 12px;
+            background-color: transparent;
+            padding: 0;
             display: flex;
             align-items: center;
-            gap: 14px;
-            box-shadow: var(--shadow-sm);
+            gap: 16px;
             text-decoration: none;
             transition: var(--transition);
         }
 
         .header-logo-box:hover {
-            transform: scale(1.03);
-            box-shadow: var(--shadow-md);
+            transform: scale(1.04);
         }
 
         .logo-img {
-            height: 85px; /* Tamaño expandido para máxima nitidez y visibilidad */
+            height: 110px; /* Tamaño maximizado para visibilidad total */
             width: auto;
             object-fit: contain;
         }
 
         .logo-company-name {
-            font-size: 2.4rem;
+            font-size: 2.8rem;
             font-weight: 800;
-            color: var(--primary-color);
+            color: var(--accent-color); /* Color oro premium para contrastar con el azul */
             letter-spacing: -0.5px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
         }
 
         /* Menú de Navegación */
@@ -99,10 +98,11 @@
             color: var(--white);
             text-decoration: none;
             font-weight: 600;
-            font-size: 1rem;
+            font-size: 1.05rem;
             padding: 0.6rem 1.1rem;
             border-radius: 8px;
             transition: var(--transition);
+            text-shadow: 0 1px 2px rgba(0,0,0,0.2);
         }
 
         nav a:hover {
@@ -112,7 +112,7 @@
 
         /* Sección Hero */
         .hero {
-            background: linear-gradient(rgba(15, 23, 42, 0.7), rgba(15, 23, 42, 0.7)), 
+            background: linear-gradient(rgba(15, 23, 42, 0.72), rgba(15, 23, 42, 0.72)), 
                         url('https://images.unsplash.com/photo-1613665813446-82a78c468a1d?auto=format&fit=crop&w=1200&q=80') no-repeat center center/cover;
             height: 50vh;
             display: flex;
@@ -151,7 +151,7 @@
             box-shadow: 0 6px 20px rgba(255, 255, 255, 0.3);
         }
 
-        /* Sección Nosotros (Misión, Visión y Valores Unificados) */
+        /* Sección Nosotros */
         .about-section {
             max-width: 1200px;
             margin: -40px auto 4rem auto;
@@ -294,10 +294,9 @@
             border-bottom-color: var(--accent-color);
         }
 
-        /* Estilos de las Nuevas Imágenes de Logotipos de Servicios */
         .card-service-img {
-            width: 110px;
-            height: 110px;
+            width: 120px;
+            height: 120px;
             object-fit: contain;
             margin-bottom: 1.8rem;
             transition: var(--transition);
@@ -351,7 +350,7 @@
             color: var(--white);
         }
 
-        /* Sección Sectores que Atendemos */
+        /* Sección Sectores */
         .sectors-section {
             background-color: rgba(226, 232, 240, 0.8);
             padding: 5rem 1.5rem;
@@ -505,9 +504,10 @@
             padding-left: 12px;
         }
 
-        /* Pie de Página */
+        /* Pie de Página con Fondo de Circuitos */
         footer {
             background-color: #0f172a; 
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cpath d='M0 30 H30 V60 H70 V90 H100 M60 0 V40 H20 V80 H60 V100' stroke='%231e293b' stroke-width='1.2' fill='none'/%3E%3Ccircle cx='30' cy='30' r='2.5' fill='%23334155'/%3E%3C/svg%3E");
             color: #94a3b8;
             padding: 4rem 1.5rem 2rem 1.5rem;
             border-top: 1px solid #1e293b;
@@ -522,14 +522,13 @@
             gap: 2rem;
         }
 
+        /* Contenedor del Logo Inferior Completamente Limpio (Sin fondo blanco) */
         .footer-logo-wrapper {
             display: flex;
             justify-content: center;
             align-items: center;
-            background-color: var(--white);
-            padding: 0.8rem 2rem;
-            border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            background-color: transparent;
+            padding: 0;
             transition: var(--transition);
         }
 
@@ -538,7 +537,7 @@
         }
 
         .footer-logo-img {
-            height: 95px; /* Logotipo inferior maximizado y completamente claro */
+            height: 120px; /* Logotipo inferior maximizado sin fondo */
             width: auto;
             object-fit: contain;
         }
@@ -657,13 +656,16 @@
             .about-section {
                 margin-top: 1.5rem;
             }
+            .logo-company-name {
+                font-size: 2.2rem;
+            }
         }
     </style>
 </head>
 <body>
 
     <header>
-        <!-- Enlace Superior: Logotipo Ampliado + Nombre de la Empresa Al Lado -->
+        <!-- Enlace Superior Limpio: Logotipo Ampliado Sin Fondo + Nombre de la Empresa -->
         <a href="#inicio" class="header-logo-box">
             <img class="logo-img" src="logo.jfif" alt="CoRe Logo">
             <span class="logo-company-name">CoRe</span>
@@ -727,7 +729,6 @@
             
             <!-- Paneles Solares -->
             <div class="card-service" id="paneles">
-                <!-- Imagen Real subida en GitHub -->
                 <img class="card-service-img" src="panel%20solar.png" alt="Paneles Solares">
                 <h3>Paneles Solares</h3>
                 <p>Instalaciones profesionales y mantenimientos preventivos y correctivos.</p>
@@ -738,7 +739,6 @@
 
             <!-- Aires Acondicionados -->
             <div class="card-service" id="climatizacion">
-                <!-- Imagen Real subida en GitHub -->
                 <img class="card-service-img" src="aire%20acondicionado.png" alt="Aires Acondicionados">
                 <h3>Aires Acondicionados</h3>
                 <p>Diseño de sistemas de climatización e instalación de alta precisión.</p>
@@ -749,7 +749,6 @@
 
             <!-- Instalaciones Eléctricas -->
             <div class="card-service" id="proyectos">
-                <!-- Imagen Real subida en GitHub -->
                 <img class="card-service-img" src="tablero.png" alt="Instalaciones Eléctricas">
                 <h3>Instalaciones Eléctricas</h3>
                 <p>Levantamientos, diagramas unifilares y memorias de cálculo.</p>
@@ -795,19 +794,18 @@
     <section class="mascot-section" id="mascota">
         <div class="mascot-container">
             
-            <!-- Imagen de la mascota Chuchito Animado -->
             <div class="mascot-image-wrapper">
                 <img src="chuchito%20animado.jpg" alt="Chuchito animado" class="mascot-img-real">
             </div>
 
             <div class="mascot-info">
                 <span class="mascot-badge-pill">Mascota Oficial</span>
-                <h2>Conoce a Chuchito ⚡</h2>
+                <h2>Conoce a Chuchito ⚡🐶</h2>
                 <p class="mascot-subtitle">Supervisor General de Seguridad y Buenas Vibras</p>
                 <p class="mascot-paragraph">
                     ¡Hola! Soy <strong>Chuchito</strong>, el integrante más carismático y con más energía de todo el equipo de <strong>CoRe</strong>. Mi trabajo diario consiste en acompañar al ingeniero y a todo el personal técnico, asegurándome de que todas las instalaciones estén perfectamente aterrizadas, seguras y, sobre todo, cargadas con la mejor actitud y felicidad.
                 </p>
-                <p class="mascot-footer-quote">"¡Instalaciones seguras y felices en todo San Luis Potosí!"</p>
+                <p class="mascot-footer-quote">"¡Instalaciones seguras y colitas felices en todo San Luis Potosí!"</p>
             </div>
 
         </div>
@@ -817,7 +815,7 @@
     <footer id="contacto">
         <div class="footer-content">
             
-            <!-- Contenedor del Logotipo Inferior Puro y Maximizado -->
+            <!-- Contenedor del Logotipo Inferior Puro y Limpio -->
             <div class="footer-logo-wrapper">
                 <img class="footer-logo-img" src="logo.jfif" alt="CoRe Logo">
             </div>
@@ -837,7 +835,7 @@
                     <svg class="social-icon-svg" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
                 </a>
                 <a href="https://youtube.com" class="social-link" target="_blank" aria-label="YouTube">
-                    <svg class="social-icon-svg" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                    <svg class="social-icon-svg" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93 Spoon .502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
                 </a>
             </div>
 

@@ -4,48 +4,85 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CoRe | Suministro e Instalaciones Eléctricas</title>
+    
+    <!-- Tipografía Moderna desde Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
     <style>
+        /* Variables de Diseño para fácil personalización */
+        :root {
+            --primary-color: #0056b3;       /* Azul Principal */
+            --primary-hover: #004085;       /* Azul Oscuro al pasar el mouse */
+            --accent-color: #ffb300;        /* Amarillo/Oro Eléctrico */
+            --accent-hover: #e09e00;
+            --bg-light: #f8fafc;            /* Fondo grisáceo muy suave */
+            --text-dark: #0f172a;           /* Texto casi negro premium */
+            --text-muted: #475569;          /* Texto secundario gris */
+            --white: #ffffff;
+            --shadow-sm: 0 4px 6px -1px rgb(0 0 0 / 0.05);
+            --shadow-md: 0 10px 15px -3px rgb(0 0 0 / 0.08), 0 4px 6px -4px rgb(0 0 0 / 0.08);
+            --shadow-lg: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
         /* Reset y Estilos Base */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Outfit', sans-serif;
             scroll-behavior: smooth;
         }
 
         body {
-            background-color: #f4f7fa;
-            color: #333333;
-            line-height: 1.5;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
         }
 
-        /* Encabezado / Header IDÉNTICO a la imagen */
+        /* Encabezado / Header */
         header {
-            background-color: #0056b3; /* Azul fuerte de fondo para la barra superior */
-            padding: 0.8rem 4%;
+            background-color: var(--primary-color);
+            padding: 0.9rem 6%;
             position: sticky;
             top: 0;
             z-index: 1000;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            box-shadow: var(--shadow-md);
         }
 
-        /* Contenedor del Logotipo Izquierdo (Fondo Blanco) */
+        /* Contenedor del Logotipo Izquierdo */
         .header-logo-box {
-            background-color: #ffffff;
-            padding: 0.5rem 1.5rem;
-            border-radius: 4px;
+            background-color: var(--white);
+            padding: 0.6rem 1.6rem;
+            border-radius: 8px;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
+            box-shadow: var(--shadow-sm);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .header-logo-box:hover {
+            transform: scale(1.02);
         }
 
         .logo-icon {
-            width: 38px;
+            width: 36px;
+            height: 36px;
+        }
+
+        /* NOTA: Si deseas usar una imagen para tu logo en el futuro, 
+           puedes borrar el <svg> y usar esta clase en su lugar: */
+        .logo-img {
+            width: auto;
             height: 38px;
+            object-fit: contain;
         }
 
         .logo-text-wrapper {
@@ -54,45 +91,50 @@
         }
 
         .logo-main-text {
-            font-size: 1.9rem;
+            font-size: 1.8rem;
             font-weight: 800;
-            color: #0056b3;
-            line-height: 0.95;
+            color: var(--primary-color);
+            line-height: 0.9;
         }
 
         .logo-sub-text {
-            font-size: 0.48rem;
+            font-size: 0.5rem;
             font-weight: 700;
-            color: #0056b3;
+            color: var(--text-muted);
             text-transform: uppercase;
-            letter-spacing: 0.2px;
-            margin-top: 2px;
+            letter-spacing: 0.5px;
+            margin-top: 3px;
         }
 
-        /* Menú de Navegación Derecho */
+        /* Menú de Navegación */
         nav {
             display: flex;
-            gap: 1.2rem;
+            gap: 1.5rem;
+            align-items: center;
         }
 
         nav a {
-            color: #ffffff;
+            color: var(--white);
             text-decoration: none;
             font-weight: 500;
             font-size: 0.95rem;
-            transition: opacity 0.2s;
+            padding: 0.5rem 0.8rem;
+            border-radius: 6px;
+            transition: var(--transition);
         }
 
         nav a:hover {
-            opacity: 0.8;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: var(--accent-color);
         }
 
-        /* Sección Hero (Principal) con Imagen de Planta e Inversores */
+        /* Sección Hero */
         .hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), 
+            background: linear-gradient(rgba(15, 23, 42, 0.6), rgba(15, 23, 42, 0.6)), 
                         url('https://images.unsplash.com/photo-1613665813446-82a78c468a1d?auto=format&fit=crop&w=1200&q=80') no-repeat center center/cover;
-            height: 55vh;
+            height: 60vh;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
@@ -100,152 +142,316 @@
         }
 
         .hero h1 {
-            color: #ffffff;
-            font-size: 2.4rem;
+            color: var(--white);
+            font-size: 2.2rem;
             font-weight: 700;
-            max-width: 900px;
-            line-height: 1.2;
+            max-width: 950px;
+            line-height: 1.3;
+            margin-bottom: 2rem;
+            text-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
         }
 
-        /* Bloque de Servicios (Tarjetas que flotan sobre el Hero) */
-        .services-section {
+        .hero-btn {
+            background-color: var(--accent-color);
+            color: var(--text-dark);
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            font-weight: 700;
+            text-decoration: none;
+            font-size: 1rem;
+            box-shadow: 0 4px 15px rgba(255, 179, 0, 0.4);
+            transition: var(--transition);
+        }
+
+        .hero-btn:hover {
+            background-color: var(--white);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(255, 255, 255, 0.3);
+        }
+
+        /* Sección Nosotros (Misión, Visión y Chuchito) */
+        .about-section {
             max-width: 1200px;
-            margin: -60px auto 3.5rem auto;
-            padding: 0 1rem;
+            margin: -40px auto 4rem auto;
+            padding: 0 1.5rem;
             position: relative;
             z-index: 10;
         }
 
-        .grid-services {
+        .about-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
-            gap: 1.5rem;
+            grid-template-columns: 2fr 1fr;
+            gap: 2rem;
         }
 
-        .card-service {
-            background-color: #ffffff;
-            padding: 2.5rem 1.5rem;
-            border-radius: 8px;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+        .about-main-card {
+            background-color: var(--white);
+            border-radius: 16px;
+            padding: 3rem 2.5rem;
+            box-shadow: var(--shadow-lg);
+            border-top: 5px solid var(--primary-color);
+        }
+
+        .about-main-card h2 {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 2rem;
+            font-weight: 800;
+            position: relative;
+        }
+
+        .about-main-card h2::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background-color: var(--accent-color);
+            margin-top: 8px;
+            border-radius: 2px;
+        }
+
+        .mv-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .mv-box h3 {
+            font-size: 1.3rem;
+            color: var(--text-dark);
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .mv-box p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* Tarjeta de la Mascota Chuchito */
+        .mascot-card {
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            color: var(--white);
+            border-radius: 16px;
+            padding: 2.5rem 2rem;
             text-align: center;
             display: flex;
             flex-direction: column;
             align-items: center;
+            justify-content: center;
+            box-shadow: var(--shadow-lg);
+            position: relative;
+            overflow: hidden;
+            border-top: 5px solid var(--accent-color);
+        }
+
+        .mascot-badge {
+            background-color: var(--accent-color);
+            color: var(--text-dark);
+            padding: 0.3rem 1rem;
+            font-size: 0.75rem;
+            font-weight: 800;
+            border-radius: 50px;
+            text-transform: uppercase;
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            box-shadow: 0 2px 8px rgba(255, 179, 0, 0.3);
+        }
+
+        .mascot-svg-wrapper {
+            width: 120px;
+            height: 120px;
+            margin-bottom: 1.5rem;
+            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.2));
+        }
+
+        .mascot-card h3 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 0.3rem;
+            color: var(--accent-color);
+        }
+
+        .mascot-role {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #94a3b8;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+        }
+
+        .mascot-desc {
+            font-size: 0.85rem;
+            color: #cbd5e1;
+            line-height: 1.5;
+        }
+
+        /* Bloque de Servicios */
+        .services-section {
+            max-width: 1200px;
+            margin: 0 auto 4rem auto;
+            padding: 0 1.5rem;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 3rem;
+            color: var(--text-dark);
+            font-weight: 800;
+        }
+
+        .section-title span {
+            color: var(--primary-color);
+        }
+
+        .grid-services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .card-service {
+            background-color: var(--white);
+            padding: 3rem 2rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow-md);
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border-bottom: 4px solid transparent;
+            transition: var(--transition);
+        }
+
+        .card-service:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+            border-bottom-color: var(--accent-color);
         }
 
         .card-icon-svg {
-            width: 55px;
-            height: 55px;
-            margin-bottom: 1.2rem;
+            width: 60px;
+            height: 60px;
+            margin-bottom: 1.5rem;
+            transition: var(--transition);
+        }
+
+        .card-service:hover .card-icon-svg {
+            transform: scale(1.1);
         }
 
         .card-service h3 {
-            color: #222222;
-            font-size: 1.2rem;
+            color: var(--text-dark);
+            font-size: 1.3rem;
             font-weight: 700;
-            margin-bottom: 0.8rem;
-            min-height: 44px;
-            display: flex;
-            align-items: center;
+            margin-bottom: 1rem;
         }
 
         .card-service p {
-            color: #666666;
-            font-size: 0.9rem;
-            margin-bottom: 1.5rem;
-            line-height: 1.4;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 0.6rem;
+            line-height: 1.5;
+            text-align: left;
+            width: 100%;
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+        }
+
+        .card-service p::before {
+            content: "⚡";
+            color: var(--accent-color);
         }
 
         .card-service-btn {
             display: inline-block;
-            border: 1px solid #0056b3;
-            color: #0056b3;
-            padding: 0.4rem 1.5rem;
-            border-radius: 4px;
+            background-color: transparent;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            padding: 0.6rem 2rem;
+            border-radius: 6px;
             text-decoration: none;
-            font-weight: 600;
-            font-size: 0.85rem;
-            transition: all 0.2s;
-            margin-top: auto;
+            font-weight: 700;
+            font-size: 0.9rem;
+            transition: var(--transition);
+            margin-top: 2rem;
+            width: 100%;
         }
 
         .card-service-btn:hover {
-            background-color: #0056b3;
-            color: #ffffff;
+            background-color: var(--primary-color);
+            color: var(--white);
         }
 
         /* Sección Sectores que Atendemos */
         .sectors-section {
-            background-color: #eef2f7;
-            padding: 3.5rem 1rem;
+            background-color: #f1f5f9;
+            padding: 5rem 1.5rem;
             text-align: center;
         }
 
         .sectors-section h2 {
-            font-size: 1.8rem;
-            color: #111111;
-            margin-bottom: 2.5rem;
-            font-weight: 700;
+            font-size: 2rem;
+            color: var(--text-dark);
+            margin-bottom: 3.5rem;
+            font-weight: 800;
         }
 
         .grid-sectors {
             max-width: 1200px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
         }
 
         .card-sector {
-            background-color: #ffffff;
-            border-radius: 8px;
+            background-color: var(--white);
+            border-radius: 12px;
             overflow: hidden;
             text-align: left;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+            box-shadow: var(--shadow-md);
+            transition: var(--transition);
+        }
+
+        .card-sector:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
         }
 
         .sector-image-file {
             width: 100%;
-            height: 180px;
+            height: 220px;
             object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .card-sector:hover .sector-image-file {
+            transform: scale(1.03);
         }
 
         .sector-text-box {
-            padding: 1.2rem;
+            padding: 1.8rem;
         }
 
         .sector-text-box h3 {
-            color: #111111;
-            font-size: 1.2rem;
+            color: var(--primary-color);
+            font-size: 1.4rem;
             font-weight: 700;
-            margin-bottom: 0.8rem;
         }
 
-        .sector-text-box ul {
-            list-style: none;
-        }
-
-        .sector-text-box ul li {
-            font-size: 0.9rem;
-            color: #444444;
-            margin-bottom: 0.4rem;
-            position: relative;
-            padding-left: 1rem;
-        }
-
-        .sector-text-box ul li::before {
-            content: "•";
-            color: #333333;
-            font-weight: bold;
-            position: absolute;
-            left: 0;
-        }
-
-        /* Pie de Página Gris con Datos e Iconos de Contacto */
+        /* Pie de Página */
         footer {
-            background-color: #d1d5db; /* Gris exacto del footer inferior */
-            color: #333333;
-            padding: 2.5rem 1rem 1.5rem 1rem;
+            background-color: #0f172a; /* Azul noche súper premium */
+            color: #94a3b8;
+            padding: 4rem 1.5rem 2rem 1.5rem;
         }
 
         .footer-content {
@@ -254,7 +460,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 1.2rem;
+            gap: 2rem;
         }
 
         /* Mini Logo Footer */
@@ -262,78 +468,125 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            gap: 8px;
         }
 
         .footer-logo-svg {
-            width: 40px;
-            height: 40px;
+            width: 44px;
+            height: 44px;
         }
 
         .footer-logo-title {
-            font-size: 1.6rem;
+            font-size: 2rem;
             font-weight: 800;
-            color: #0056b3;
+            color: var(--white);
             line-height: 1;
         }
 
         /* Datos del Ingeniero */
         .footer-contacts {
-            font-size: 0.95rem;
+            font-size: 1rem;
             text-align: center;
+            border-top: 1px solid #1e293b;
+            border-bottom: 1px solid #1e293b;
+            padding: 1.5rem 0;
+            width: 100%;
+            max-width: 600px;
         }
 
         .footer-contacts p {
-            margin: 0.4rem 0;
+            margin: 0.6rem 0;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 8px;
+            gap: 10px;
+        }
+
+        .footer-contacts strong {
+            color: var(--white);
         }
 
         .footer-contacts a {
-            color: #333333;
+            color: var(--accent-color);
             text-decoration: none;
+            transition: var(--transition);
         }
 
         .footer-contacts a:hover {
+            color: var(--white);
             text-decoration: underline;
         }
 
         /* Iconos de Redes Sociales */
         .footer-social-media {
             display: flex;
-            gap: 1rem;
-            margin-top: 0.2rem;
+            gap: 1.5rem;
+        }
+
+        .social-link {
+            background-color: #1e293b;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .social-link:hover {
+            background-color: var(--primary-color);
+            transform: scale(1.1);
+        }
+
+        .social-link.instagram:hover {
+            background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
         }
 
         .social-icon-svg {
-            width: 22px;
-            height: 22px;
-            fill: #0056b3;
-            transition: opacity 0.2s;
+            width: 20px;
+            height: 20px;
+            fill: var(--white);
         }
 
-        .social-icon-svg:hover {
-            opacity: 0.7;
+        .copyright-text {
+            font-size: 0.8rem;
+            color: #64748b;
+            margin-top: 1rem;
         }
 
         /* Adaptabilidad para Pantallas de Celulares */
+        @media (max-width: 992px) {
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
         @media (max-width: 768px) {
             header {
                 flex-direction: column;
-                gap: 0.8rem;
-                padding: 1rem;
+                gap: 1.2rem;
+                padding: 1.2rem;
             }
             nav {
-                gap: 1rem;
+                gap: 0.5rem;
                 width: 100%;
                 justify-content: center;
+                flex-wrap: wrap;
+            }
+            nav a {
+                font-size: 0.85rem;
+                padding: 0.4rem 0.6rem;
             }
             .hero h1 {
                 font-size: 1.6rem;
             }
-            .services-section {
+            .about-section {
                 margin-top: 1.5rem;
+            }
+            .mv-container {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
             }
         }
     </style>
@@ -341,33 +594,114 @@
 <body>
 
     <header>
-        <div class="header-logo-box">
+        <!-- Enlace del Logo Principal -->
+        <a href="#inicio" class="header-logo-box">
+            <!-- Icono SVG de CoRe -->
             <svg class="logo-icon" viewBox="0 0 24 24" fill="none" stroke="#0056b3" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                 <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
             </svg>
+            
+            <!-- NOTA: Si en el futuro tienes un archivo de imagen oficial como logo.png, 
+                 puedes comentar el SVG de arriba y activar esta etiqueta <img> de abajo:
+                 
+                 <img src="logo.png" alt="Logo CoRe" class="logo-img"> 
+            -->
+            
             <div class="logo-text-wrapper">
                 <span class="logo-main-text">CoRe</span>
                 <span class="logo-sub-text">Suministro e instalaciones eléctricas</span>
             </div>
-        </div>
+        </a>
+        
         <nav>
             <a href="#inicio">Inicio</a>
+            <a href="#nosotros">Nosotros</a>
             <a href="#servicios">Servicios</a>
             <a href="#paneles">Paneles Solares</a>
             <a href="#climatizacion">Climatización</a>
             <a href="#proyectos">Proyectos</a>
             <a href="#contacto">Contacto</a>
-
         </nav>
     </header>
 
     <section class="hero" id="inicio">
-        <h1>CoRe: Suministro y soluciones confiables en baja y media tensión, instalaciones residenciales, comerciales e industriales, paneles solares y climatización bajo las más estrictas normas y con los mejores materiales del mercado.</h1>
+        <h1>Suministro y soluciones confiables en baja y media tensión, instalaciones residenciales, comerciales e industriales, paneles solares y climatización.</h1>
+        <a href="https://wa.me/524446687711?text=Hola%20CoRe,%20me%20gustar%C3%ADa%20cotizar%20un%20servicio" class="hero-btn" target="_blank">Cotizar por WhatsApp</a>
     </section>
 
+    <!-- Nueva Sección: Nosotros (Misión, Visión y Chuchito) -->
+    <section class="about-section" id="nosotros">
+        <div class="about-grid">
+            
+            <!-- Bloque de Misión y Visión -->
+            <div class="about-main-card">
+                <h2>Nuestra Filosofía</h2>
+                <div class="mv-container">
+                    <div class="mv-box">
+                        <h3>🎯 Misión</h3>
+                        <p>Proporcionar soluciones integrales y altamente confiables en ingeniería eléctrica, climatización y energía solar. Nos comprometemos a ejecutar cada proyecto bajo las normas de seguridad más estrictas y con materiales de calidad garantizada, impulsando el bienestar y desarrollo de nuestros clientes en el sector residencial, comercial e industrial.</p>
+                    </div>
+                    <div class="mv-box">
+                        <h3>💡 Visión</h3>
+                        <p>Consolidarnos en la región como la empresa líder de referencia en el sector de servicios eléctricos y energías renovables, destacando por nuestra excelencia técnica, constante innovación y un firme compromiso ecológico que aporte valor real al medio ambiente y a la sociedad.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bloque de Mascota "Chuchito" -->
+            <div class="mascot-card">
+                <div class="mascot-badge">Mascota Oficial</div>
+                
+                <div class="mascot-svg-wrapper">
+                    <!-- Ilustración Profesional en SVG de Chuchito (El perrito eléctrico) -->
+                    <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" style="width: 100%; height: 100%;">
+                        <!-- Círculo de fondo brillante -->
+                        <circle cx="50" cy="50" r="45" fill="#fef3c7"/>
+                        <!-- Orejas -->
+                        <path d="M25 35 C15 15, 35 25, 35 40 Z" fill="#b45309"/>
+                        <path d="M75 35 C85 15, 65 25, 65 40 Z" fill="#b45309"/>
+                        <path d="M28 33 C20 20, 33 27, 33 38 Z" fill="#fca5a5"/>
+                        <path d="M72 33 C80 20, 67 27, 67 38 Z" fill="#fca5a5"/>
+                        <!-- Cabeza -->
+                        <circle cx="50" cy="50" r="25" fill="#d97706"/>
+                        <!-- Hocico blanco -->
+                        <ellipse cx="50" cy="58" rx="12" ry="9" fill="#ffffff"/>
+                        <!-- Ojos -->
+                        <circle cx="42" cy="46" r="3.5" fill="#1e293b"/>
+                        <circle cx="58" cy="46" r="3.5" fill="#1e293b"/>
+                        <!-- Brillo de ojos -->
+                        <circle cx="41" cy="44.5" r="1" fill="#ffffff"/>
+                        <circle cx="57" cy="44.5" r="1" fill="#ffffff"/>
+                        <!-- Nariz -->
+                        <path d="M47 54 H53 L50 57 Z" fill="#1e293b"/>
+                        <!-- Sonrisa -->
+                        <path d="M46 60 Q50 63 54 60" stroke="#1e293b" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+                        <!-- Mejillas sonrosadas -->
+                        <circle cx="34" cy="54" r="2.5" fill="#f87171" opacity="0.6"/>
+                        <circle cx="66" cy="54" r="2.5" fill="#f87171" opacity="0.6"/>
+                        <!-- Marca del rayito en la frente -->
+                        <path d="M48 28 L54 34 H48 L52 40" stroke="#ffb300" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                        <!-- Chispas eléctricas alrededor -->
+                        <path d="M12 45 L15 48 H11 L14 53" stroke="#ffb300" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M88 45 L85 48 H89 L86 53" stroke="#ffb300" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+
+                <h3>Chuchito ⚡🐶</h3>
+                <p class="mascot-role">Supervisor de Seguridad</p>
+                <p class="mascot-desc">Soy el guardián oficial del equipo de CoRe. Mi trabajo es asegurarme de que todas las instalaciones estén perfectamente aterrizadas, seguras y llenas de buena energía.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Sección de Servicios -->
     <section class="services-section" id="servicios">
+        <h2 class="section-title">Nuestros <span>Servicios Especializados</span></h2>
+        
         <div class="grid-services">
             
+            <!-- Paneles Solares -->
             <div class="card-service" id="paneles">
                 <svg class="card-icon-svg" viewBox="0 0 24 24" fill="none" stroke="#0056b3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <circle cx="12" cy="12" r="5"></circle>
@@ -380,12 +714,14 @@
                     <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
                     <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
                 </svg>
-                <h3>Paneles solares</h3>
-                <p>•Instalaciones y mantenimientos preventivos y correctivos.</p>
-                <p>•Venta de paneles solares.</p>
-                <a href="https://wa.me/524446687711?text=Hola%20CoRe,%20me%20interesa%20informaci%C3%B3n%20sobre%20Paneles%20Solares" class="card-service-btn" target="_blank">Ver más</a>
+                <h3>Paneles Solares</h3>
+                <p>Instalaciones profesionales y mantenimientos preventivos y correctivos.</p>
+                <p>Venta autorizada de paneles solares de alta eficiencia.</p>
+                <p>Estudios de ahorro energético a tu medida.</p>
+                <a href="https://wa.me/524446687711?text=Hola%20CoRe,%20me%20interesa%20informaci%C3%B3n%20sobre%20Paneles%20Solares" class="card-service-btn" target="_blank">Saber más</a>
             </div>
 
+            <!-- Aires Acondicionados -->
             <div class="card-service" id="climatizacion">
                 <svg class="card-icon-svg" viewBox="0 0 24 24" fill="none" stroke="#0056b3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <rect x="2" y="5" width="20" height="10" rx="2"></rect>
@@ -393,29 +729,31 @@
                     <line x1="18" y1="19" x2="18" y2="15"></line>
                     <path d="M10 19c0-1.5 1-2.5 2-2.5s2 1 2 2.5"></path>
                 </svg>
-                <h3>Aires acondicionados</h3>
-                <p>•Mantenimiento e instalación de aires acondicionados y climatización.</p>
-                <p>•Venta de equipos de aires acondicionados.</p>
-                <a href="https://wa.me/524446687711?text=Hola%20CoRe,%20me%20interesa%20informaci%C3%B3n%20sobre%20Aire%20Acondicionado" class="card-service-btn" target="_blank">Ver más</a>
+                <h3>Aires Acondicionados</h3>
+                <p>Diseño de sistemas de climatización e instalación de alta precisión.</p>
+                <p>Mantenimiento y recarga de refrigerante.</p>
+                <p>Venta de equipos de aire acondicionado con tecnología Inverter.</p>
+                <a href="https://wa.me/524446687711?text=Hola%20CoRe,%20me%20interesa%20informaci%C3%B3n%20sobre%20Aire%20Acondicionado" class="card-service-btn" target="_blank">Saber más</a>
             </div>
 
+            <!-- Instalaciones Eléctricas -->
             <div class="card-service" id="proyectos">
                 <svg class="card-icon-svg" viewBox="0 0 24 24" fill="none" stroke="#0056b3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M3 3h18v18H3z"></path>
                     <path d="M3 9h18M9 21V9"></path>
                 </svg>
-                <h3>Instalaciones electricas</h3>
-                <p>•Levantamientos y diagramas eléctricos.</p>
-                <p>•Instalaciones eléctricas</p>
-                <p>•Mantenimiento correctivo y preventivo </p>
-                <p>•Venta de equipo eléctrico </p>
-                
-                <a href="https://wa.me/524446687711?text=Hola%20CoRe,%20me%20interesa%20un%20Levantamiento%20o%20Diagrama%20El%C3%A9ctrico" class="card-service-btn" target="_blank">Ver más</a>
+                <h3>Instalaciones Eléctricas</h3>
+                <p>Levantamientos, diagramas unifilares y memorias de cálculo.</p>
+                <p>Instalaciones eléctricas residenciales, comerciales e industriales.</p>
+                <p>Mantenimiento correctivo urgente y preventivo.</p>
+                <p>Venta de material y equipo eléctrico certificado.</p>
+                <a href="https://wa.me/524446687711?text=Hola%20CoRe,%20me%20interesa%20un%20Levantamiento%20o%20Diagrama%20El%C3%A9ctrico" class="card-service-btn" target="_blank">Saber más</a>
             </div>
 
         </div>
     </section>
 
+    <!-- Sectores que Atendemos -->
     <section class="sectors-section">
         <h2>Sectores que Atendemos</h2>
         <div class="grid-sectors">
@@ -444,6 +782,7 @@
         </div>
     </section>
 
+    <!-- Pie de Página -->
     <footer id="contacto">
         <div class="footer-content">
             
@@ -457,21 +796,26 @@
             <div class="footer-contacts">
                 <p>👤 <strong>Ing. Luis Fernando Colunga Cuevas</strong></p>
                 <p>📧 <strong>Correo:</strong> <a href="mailto:fcolunga45@gmail.com">fcolunga45@gmail.com</a></p>
-                <p>📞 <strong>Teléfono:</strong> <a href="https://wa.me/524446687711" target="_blank">4446687711</a></p>
+                <p>📞 <strong>WhatsApp:</strong> <a href="https://wa.me/524446687711" target="_blank">4446687711</a></p>
             </div>
 
+            <!-- Redes Sociales Oficiales -->
             <div class="footer-social-media">
-                <a href="https://facebook.com" target="_blank">
+                <!-- Facebook -->
+                <a href="https://facebook.com" class="social-link" target="_blank" aria-label="Facebook">
                     <svg class="social-icon-svg" viewBox="0 0 24 24"><path d="M9 8H7v3h2v9h3v-9h3l.5-3H12V6c0-.88.77-1 1-1h2V2h-3c-2.9 0-4 1.6-4 3.5V8z"/></svg>
                 </a>
-                <a href="https://instagram.com" target="_blank">
+                <!-- Instagram Oficial con tu link solicitado -->
+                <a href="https://www.instagram.com/co_re.19?utm_source=qr&igsh=a3F4ZXJucHlvYTZ3" class="social-link instagram" target="_blank" aria-label="Instagram">
                     <svg class="social-icon-svg" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
                 </a>
-                <a href="https://youtube.com" target="_blank">
+                <!-- YouTube -->
+                <a href="https://youtube.com" class="social-link" target="_blank" aria-label="YouTube">
                     <svg class="social-icon-svg" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
                 </a>
             </div>
 
+            <p class="copyright-text">© 2026 CoRe Suministro e Instalaciones Eléctricas. Todos los derechos reservados.</p>
         </div>
     </footer>
 

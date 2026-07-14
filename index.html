@@ -11,7 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
     <style>
-        /* Variables de Diseño para fácil personalización */
+        /* Variables de Diseño */
         :root {
             --primary-color: #0056b3;       /* Azul Principal */
             --primary-hover: #004085;       /* Azul Oscuro al pasar el mouse */
@@ -58,7 +58,7 @@
         /* Contenedor del Logotipo Izquierdo */
         .header-logo-box {
             background-color: var(--white);
-            padding: 0.6rem 1.6rem;
+            padding: 0.5rem 1.2rem;
             border-radius: 8px;
             display: flex;
             align-items: center;
@@ -69,20 +69,14 @@
         }
 
         .header-logo-box:hover {
-            transform: scale(1.02);
+            transform: scale(1.03);
         }
 
-        .logo-icon {
-            width: 36px;
-            height: 36px;
-        }
-
-        /* NOTA: Si deseas usar una imagen para tu logo en el futuro, 
-           puedes borrar el <svg> y usar esta clase en su lugar: */
         .logo-img {
+            height: 46px;
             width: auto;
-            height: 38px;
             object-fit: contain;
+            border-radius: 4px;
         }
 
         .logo-text-wrapper {
@@ -109,7 +103,7 @@
         /* Menú de Navegación */
         nav {
             display: flex;
-            gap: 1.5rem;
+            gap: 1.2rem;
             align-items: center;
         }
 
@@ -130,7 +124,7 @@
 
         /* Sección Hero */
         .hero {
-            background: linear-gradient(rgba(15, 23, 42, 0.6), rgba(15, 23, 42, 0.6)), 
+            background: linear-gradient(rgba(15, 23, 42, 0.65), rgba(15, 23, 42, 0.65)), 
                         url('https://images.unsplash.com/photo-1613665813446-82a78c468a1d?auto=format&fit=crop&w=1200&q=80') no-repeat center center/cover;
             height: 60vh;
             display: flex;
@@ -169,7 +163,7 @@
             box-shadow: 0 6px 20px rgba(255, 255, 255, 0.3);
         }
 
-        /* Sección Nosotros (Misión, Visión y Chuchito) */
+        /* Sección Nosotros (Misión, Visión y Valores Unificados) */
         .about-section {
             max-width: 1200px;
             margin: -40px auto 4rem auto;
@@ -178,117 +172,92 @@
             z-index: 10;
         }
 
-        .about-grid {
-            display: grid;
-            grid-template-columns: 2fr 1fr;
-            gap: 2rem;
-        }
-
         .about-main-card {
             background-color: var(--white);
             border-radius: 16px;
-            padding: 3rem 2.5rem;
+            padding: 3.5rem 2.5rem;
             box-shadow: var(--shadow-lg);
             border-top: 5px solid var(--primary-color);
         }
 
         .about-main-card h2 {
-            font-size: 2rem;
+            font-size: 2.2rem;
             color: var(--primary-color);
-            margin-bottom: 2rem;
+            margin-bottom: 2.5rem;
             font-weight: 800;
+            text-align: center;
             position: relative;
         }
 
         .about-main-card h2::after {
             content: '';
             display: block;
-            width: 60px;
+            width: 80px;
             height: 4px;
             background-color: var(--accent-color);
-            margin-top: 8px;
+            margin: 10px auto 0 auto;
             border-radius: 2px;
         }
 
-        .mv-container {
+        .mvv-container {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
         }
 
-        .mv-box h3 {
-            font-size: 1.3rem;
-            color: var(--text-dark);
-            margin-bottom: 0.8rem;
-            display: flex;
-            align-items: center;
-            gap: 10px;
+        .mvv-box {
+            background-color: #f8fafc;
+            padding: 2.2rem 1.8rem;
+            border-radius: 12px;
+            border: 1px solid #e2e8f0;
+            transition: var(--transition);
         }
 
-        .mv-box p {
+        .mvv-box:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--accent-color);
+        }
+
+        .mvv-icon {
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+            display: inline-block;
+        }
+
+        .mvv-box h3 {
+            font-size: 1.4rem;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .mvv-box p {
             color: var(--text-muted);
             font-size: 0.95rem;
             line-height: 1.6;
         }
 
-        /* Tarjeta de la Mascota Chuchito */
-        .mascot-card {
-            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
-            color: var(--white);
-            border-radius: 16px;
-            padding: 2.5rem 2rem;
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            box-shadow: var(--shadow-lg);
+        .valores-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .valores-list li {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            margin-bottom: 0.8rem;
             position: relative;
-            overflow: hidden;
-            border-top: 5px solid var(--accent-color);
+            padding-left: 1.5rem;
+            line-height: 1.4;
         }
 
-        .mascot-badge {
-            background-color: var(--accent-color);
-            color: var(--text-dark);
-            padding: 0.3rem 1rem;
-            font-size: 0.75rem;
-            font-weight: 800;
-            border-radius: 50px;
-            text-transform: uppercase;
+        .valores-list li::before {
+            content: "⚡";
             position: absolute;
-            top: 15px;
-            right: 15px;
-            box-shadow: 0 2px 8px rgba(255, 179, 0, 0.3);
-        }
-
-        .mascot-svg-wrapper {
-            width: 120px;
-            height: 120px;
-            margin-bottom: 1.5rem;
-            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.2));
-        }
-
-        .mascot-card h3 {
-            font-size: 1.4rem;
-            font-weight: 700;
-            margin-bottom: 0.3rem;
+            left: 0;
             color: var(--accent-color);
-        }
-
-        .mascot-role {
-            font-size: 0.8rem;
-            font-weight: 600;
-            color: #94a3b8;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 1rem;
-        }
-
-        .mascot-desc {
-            font-size: 0.85rem;
-            color: #cbd5e1;
-            line-height: 1.5;
+            font-weight: bold;
         }
 
         /* Bloque de Servicios */
@@ -300,8 +269,8 @@
 
         .section-title {
             text-align: center;
-            font-size: 2rem;
-            margin-bottom: 3rem;
+            font-size: 2.2rem;
+            margin-bottom: 3.5rem;
             color: var(--text-dark);
             font-weight: 800;
         }
@@ -350,13 +319,13 @@
             color: var(--text-dark);
             font-size: 1.3rem;
             font-weight: 700;
-            margin-bottom: 1rem;
+            margin-bottom: 1.2rem;
         }
 
         .card-service p {
             color: var(--text-muted);
             font-size: 0.95rem;
-            margin-bottom: 0.6rem;
+            margin-bottom: 0.8rem;
             line-height: 1.5;
             text-align: left;
             width: 100%;
@@ -398,7 +367,7 @@
         }
 
         .sectors-section h2 {
-            font-size: 2rem;
+            font-size: 2.2rem;
             color: var(--text-dark);
             margin-bottom: 3.5rem;
             font-weight: 800;
@@ -447,11 +416,109 @@
             font-weight: 700;
         }
 
+        /* Sección Especial: Mascota Chuchito (Abajo del todo) */
+        .mascot-section {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: var(--white);
+            padding: 6rem 1.5rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .mascot-container {
+            max-width: 1000px;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 3.5rem;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.03);
+            padding: 3.5rem;
+            border-radius: 24px;
+            box-shadow: var(--shadow-lg);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .mascot-image-wrapper {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+            aspect-ratio: 1 / 1;
+            border: 4px solid var(--accent-color);
+        }
+
+        .mascot-img-real {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .mascot-container:hover .mascot-img-real {
+            transform: scale(1.05);
+        }
+
+        .mascot-info {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .mascot-badge-pill {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: var(--text-dark);
+            padding: 0.4rem 1.2rem;
+            font-size: 0.8rem;
+            font-weight: 800;
+            border-radius: 50px;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            box-shadow: 0 4px 10px rgba(255, 179, 0, 0.3);
+        }
+
+        .mascot-info h2 {
+            font-size: 2.4rem;
+            color: var(--accent-color);
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+        }
+
+        .mascot-subtitle {
+            font-size: 1rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: #94a3b8;
+            margin-bottom: 1.5rem;
+        }
+
+        .mascot-paragraph {
+            font-size: 1.05rem;
+            color: #cbd5e1;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+
+        .mascot-footer-quote {
+            font-style: italic;
+            color: var(--accent-color);
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-left: 3px solid var(--accent-color);
+            padding-left: 12px;
+        }
+
         /* Pie de Página */
         footer {
-            background-color: #0f172a; /* Azul noche súper premium */
+            background-color: #0f172a; 
             color: #94a3b8;
             padding: 4rem 1.5rem 2rem 1.5rem;
+            border-top: 1px solid #1e293b;
         }
 
         .footer-content {
@@ -463,7 +530,6 @@
             gap: 2rem;
         }
 
-        /* Mini Logo Footer */
         .footer-logo-wrapper {
             display: flex;
             flex-direction: column;
@@ -471,19 +537,15 @@
             gap: 8px;
         }
 
-        .footer-logo-svg {
-            width: 44px;
-            height: 44px;
+        .footer-logo-img {
+            height: 60px;
+            width: auto;
+            object-fit: contain;
+            border-radius: 6px;
+            background-color: var(--white);
+            padding: 4px;
         }
 
-        .footer-logo-title {
-            font-size: 2rem;
-            font-weight: 800;
-            color: var(--white);
-            line-height: 1;
-        }
-
-        /* Datos del Ingeniero */
         .footer-contacts {
             font-size: 1rem;
             text-align: center;
@@ -539,6 +601,7 @@
             transform: scale(1.1);
         }
 
+        /* Efecto Instagram de gradiente */
         .social-link.instagram:hover {
             background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
         }
@@ -555,10 +618,24 @@
             margin-top: 1rem;
         }
 
-        /* Adaptabilidad para Pantallas de Celulares */
+        /* Adaptabilidad / Responsive */
         @media (max-width: 992px) {
-            .about-grid {
+            .mascot-container {
                 grid-template-columns: 1fr;
+                gap: 2.5rem;
+                padding: 2.5rem;
+            }
+            .mascot-image-wrapper {
+                max-width: 320px;
+                margin: 0 auto;
+            }
+            .mascot-info {
+                align-items: center;
+                text-align: center;
+            }
+            .mascot-footer-quote {
+                border-left: none;
+                padding-left: 0;
             }
         }
 
@@ -569,7 +646,7 @@
                 padding: 1.2rem;
             }
             nav {
-                gap: 0.5rem;
+                gap: 0.4rem;
                 width: 100%;
                 justify-content: center;
                 flex-wrap: wrap;
@@ -584,29 +661,15 @@
             .about-section {
                 margin-top: 1.5rem;
             }
-            .mv-container {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
-            }
         }
     </style>
 </head>
 <body>
 
     <header>
-        <!-- Enlace del Logo Principal -->
+        <!-- Enlace del Logo Principal usando logo.jfif -->
         <a href="#inicio" class="header-logo-box">
-            <!-- Icono SVG de CoRe -->
-            <svg class="logo-icon" viewBox="0 0 24 24" fill="none" stroke="#0056b3" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
-            </svg>
-            
-            <!-- NOTA: Si en el futuro tienes un archivo de imagen oficial como logo.png, 
-                 puedes comentar el SVG de arriba y activar esta etiqueta <img> de abajo:
-                 
-                 <img src="logo.png" alt="Logo CoRe" class="logo-img"> 
-            -->
-            
+            <img class="logo-img" src="logo.jfif" alt="CoRe Logo">
             <div class="logo-text-wrapper">
                 <span class="logo-main-text">CoRe</span>
                 <span class="logo-sub-text">Suministro e instalaciones eléctricas</span>
@@ -617,10 +680,8 @@
             <a href="#inicio">Inicio</a>
             <a href="#nosotros">Nosotros</a>
             <a href="#servicios">Servicios</a>
-            <a href="#paneles">Paneles Solares</a>
-            <a href="#climatizacion">Climatización</a>
-            <a href="#proyectos">Proyectos</a>
             <a href="#contacto">Contacto</a>
+            <a href="#mascota">Chuchito 🐶</a>
         </nav>
     </header>
 
@@ -629,69 +690,39 @@
         <a href="https://wa.me/524446687711?text=Hola%20CoRe,%20me%20gustar%C3%ADa%20cotizar%20un%20servicio" class="hero-btn" target="_blank">Cotizar por WhatsApp</a>
     </section>
 
-    <!-- Nueva Sección: Nosotros (Misión, Visión y Chuchito) -->
+    <!-- Sección: Nosotros (Misión, Visión y Valores en un solo apartado) -->
     <section class="about-section" id="nosotros">
-        <div class="about-grid">
-            
-            <!-- Bloque de Misión y Visión -->
-            <div class="about-main-card">
-                <h2>Nuestra Filosofía</h2>
-                <div class="mv-container">
-                    <div class="mv-box">
-                        <h3>🎯 Misión</h3>
-                        <p>Proporcionar soluciones integrales y altamente confiables en ingeniería eléctrica, climatización y energía solar. Nos comprometemos a ejecutar cada proyecto bajo las normas de seguridad más estrictas y con materiales de calidad garantizada, impulsando el bienestar y desarrollo de nuestros clientes en el sector residencial, comercial e industrial.</p>
-                    </div>
-                    <div class="mv-box">
-                        <h3>💡 Visión</h3>
-                        <p>Consolidarnos en la región como la empresa líder de referencia en el sector de servicios eléctricos y energías renovables, destacando por nuestra excelencia técnica, constante innovación y un firme compromiso ecológico que aporte valor real al medio ambiente y a la sociedad.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Bloque de Mascota "Chuchito" -->
-            <div class="mascot-card">
-                <div class="mascot-badge">Mascota Oficial</div>
+        <div class="about-main-card">
+            <h2>Quiénes Somos</h2>
+            <div class="mvv-container">
                 
-                <div class="mascot-svg-wrapper">
-                    <!-- Ilustración Profesional en SVG de Chuchito (El perrito eléctrico) -->
-                    <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" style="width: 100%; height: 100%;">
-                        <!-- Círculo de fondo brillante -->
-                        <circle cx="50" cy="50" r="45" fill="#fef3c7"/>
-                        <!-- Orejas -->
-                        <path d="M25 35 C15 15, 35 25, 35 40 Z" fill="#b45309"/>
-                        <path d="M75 35 C85 15, 65 25, 65 40 Z" fill="#b45309"/>
-                        <path d="M28 33 C20 20, 33 27, 33 38 Z" fill="#fca5a5"/>
-                        <path d="M72 33 C80 20, 67 27, 67 38 Z" fill="#fca5a5"/>
-                        <!-- Cabeza -->
-                        <circle cx="50" cy="50" r="25" fill="#d97706"/>
-                        <!-- Hocico blanco -->
-                        <ellipse cx="50" cy="58" rx="12" ry="9" fill="#ffffff"/>
-                        <!-- Ojos -->
-                        <circle cx="42" cy="46" r="3.5" fill="#1e293b"/>
-                        <circle cx="58" cy="46" r="3.5" fill="#1e293b"/>
-                        <!-- Brillo de ojos -->
-                        <circle cx="41" cy="44.5" r="1" fill="#ffffff"/>
-                        <circle cx="57" cy="44.5" r="1" fill="#ffffff"/>
-                        <!-- Nariz -->
-                        <path d="M47 54 H53 L50 57 Z" fill="#1e293b"/>
-                        <!-- Sonrisa -->
-                        <path d="M46 60 Q50 63 54 60" stroke="#1e293b" stroke-width="1.5" stroke-linecap="round" fill="none"/>
-                        <!-- Mejillas sonrosadas -->
-                        <circle cx="34" cy="54" r="2.5" fill="#f87171" opacity="0.6"/>
-                        <circle cx="66" cy="54" r="2.5" fill="#f87171" opacity="0.6"/>
-                        <!-- Marca del rayito en la frente -->
-                        <path d="M48 28 L54 34 H48 L52 40" stroke="#ffb300" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-                        <!-- Chispas eléctricas alrededor -->
-                        <path d="M12 45 L15 48 H11 L14 53" stroke="#ffb300" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M88 45 L85 48 H89 L86 53" stroke="#ffb300" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
+                <!-- Misión -->
+                <div class="mvv-box">
+                    <span class="mvv-icon">🎯</span>
+                    <h3>Misión</h3>
+                    <p>Proporcionar soluciones integrales y altamente confiables en ingeniería eléctrica, climatización y energía solar. Nos comprometemos a ejecutar cada proyecto bajo las normas de seguridad más estrictas y con materiales de calidad garantizada, impulsando el bienestar y desarrollo de nuestros clientes en el sector residencial, comercial e industrial.</p>
                 </div>
 
-                <h3>Chuchito ⚡🐶</h3>
-                <p class="mascot-role">Supervisor de Seguridad</p>
-                <p class="mascot-desc">Soy el guardián oficial del equipo de CoRe. Mi trabajo es asegurarme de que todas las instalaciones estén perfectamente aterrizadas, seguras y llenas de buena energía.</p>
-            </div>
+                <!-- Visión -->
+                <div class="mvv-box">
+                    <span class="mvv-icon">💡</span>
+                    <h3>Visión</h3>
+                    <p>Consolidarnos en la región como la empresa líder de referencia en el sector de servicios eléctricos y energías renovables, destacando por nuestra excelencia técnica, constante innovación y un firme compromiso ecológico que aporte valor real al medio ambiente y a la sociedad.</p>
+                </div>
 
+                <!-- Valores -->
+                <div class="mvv-box">
+                    <span class="mvv-icon">💎</span>
+                    <h3>Valores</h3>
+                    <ul class="valores-list">
+                        <li><strong>Seguridad:</strong> Es nuestra prioridad número uno en cada instalación.</li>
+                        <li><strong>Calidad:</strong> Trabajamos solo con los mejores materiales certificados.</li>
+                        <li><strong>Honestidad:</strong> Transparencia absoluta en cotizaciones y proyectos.</li>
+                        <li><strong>Compromiso:</strong> Cumplimiento estricto de tiempos y especificaciones.</li>
+                    </ul>
+                </div>
+
+            </div>
         </div>
     </section>
 
@@ -782,14 +813,34 @@
         </div>
     </section>
 
+    <!-- Sección Exclusiva y Dedicada para Chuchito (Abajo del todo) -->
+    <section class="mascot-section" id="mascota">
+        <div class="mascot-container">
+            
+            <!-- Imagen de la mascota Chuchito Animado -->
+            <div class="mascot-image-wrapper">
+                <img src="chuchito%20animado.jpg" alt="Chuchito animado" class="mascot-img-real">
+            </div>
+
+            <div class="mascot-info">
+                <span class="mascot-badge-pill">Mascota Oficial</span>
+                <h2>Conoce a Chuchito ⚡🐶</h2>
+                <p class="mascot-subtitle">Supervisor General de Seguridad y Buenas Vibras</p>
+                <p class="mascot-paragraph">
+                    ¡Hola! Soy <strong>Chuchito</strong>, el integrante más carismático y con más energía de todo el equipo de <strong>CoRe</strong>. Mi trabajo diario consiste en acompañar al ingeniero y a todo el personal técnico, asegurándome de que todas las instalaciones estén perfectamente aterrizadas, seguras y, sobre todo, cargadas con la mejor actitud y felicidad.
+                </p>
+                <p class="mascot-footer-quote">"¡Instalaciones seguras y colitas felices en todo San Luis Potosí!"</p>
+            </div>
+
+        </div>
+    </section>
+
     <!-- Pie de Página -->
     <footer id="contacto">
         <div class="footer-content">
             
             <div class="footer-logo-wrapper">
-                <svg class="footer-logo-svg" viewBox="0 0 24 24" fill="none" stroke="#0056b3" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                    <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
-                </svg>
+                <img class="footer-logo-img" src="logo.jfif" alt="CoRe Logo">
                 <span class="footer-logo-title">CoRe</span>
             </div>
 
@@ -805,7 +856,7 @@
                 <a href="https://facebook.com" class="social-link" target="_blank" aria-label="Facebook">
                     <svg class="social-icon-svg" viewBox="0 0 24 24"><path d="M9 8H7v3h2v9h3v-9h3l.5-3H12V6c0-.88.77-1 1-1h2V2h-3c-2.9 0-4 1.6-4 3.5V8z"/></svg>
                 </a>
-                <!-- Instagram Oficial con tu link solicitado -->
+                <!-- Instagram Oficial de CoRe -->
                 <a href="https://www.instagram.com/co_re.19?utm_source=qr&igsh=a3F4ZXJucHlvYTZ3" class="social-link instagram" target="_blank" aria-label="Instagram">
                     <svg class="social-icon-svg" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
                 </a>

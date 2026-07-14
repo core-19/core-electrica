@@ -11,16 +11,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght=300;400;500;600;700;800&display=swap" rel="stylesheet">
 
     <style>
-        /* Variables de Diseño (Invertidas) */
+        /* Variables de Diseño (Optimizadas con Azul Gris y Fondo de Logo) */
         :root {
-            --primary-color: #0056b3;       /* Azul Principal */
+            --primary-color: #0056b3;       /* Azul Eléctrico Principal */
             --primary-hover: #004085;       /* Azul Oscuro */
-            --accent-color: #0056b3;        /* Ahora las letras de CoRe y acentos son Azules */
-            --accent-hover: #004085;
-            --bg-light: #0056b3;            /* El fondo general ahora es Azul Eléctrico */
+            --header-bg: #101726;           /* Color exacto del fondo de tu logo.jfif (Azul Marino Profundo) */
+            --bg-light: #0056b3;            /* El fondo general sigue siendo el Azul Eléctrico */
+            --bg-blue-grey: #334155;        /* Azul Gris / Slate para Quiénes Somos y Chuchito */
             --text-dark: #0f172a;           /* Texto oscuro premium */
-            --text-muted: #475569;          /* Texto secundario gris */
-            --white: #ffffff;               /* Blanco para header, footer y tarjetas */
+            --text-muted: #cbd5e1;          /* Texto secundario claro para fondos oscuros */
+            --white: #ffffff;               
             --shadow-sm: 0 4px 6px -1px rgb(0 0 0 / 0.05);
             --shadow-md: 0 10px 15px -3px rgb(0 0 0 / 0.08), 0 4px 6px -4px rgb(0 0 0 / 0.08);
             --shadow-lg: 0 20px 25px -5px rgb(0 0 0 / 0.15), 0 8px 10px -6px rgb(0 0 0 / 0.15);
@@ -44,11 +44,11 @@
             line-height: 1.6;
         }
 
-        /* Encabezado / Header con Fondo Blanco y Nodos Eléctricos Azules */
+        /* Cabecera / Header con el fondo exacto del Logotipo */
         header {
-            background-color: var(--white);
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cpath d='M0 30 H30 V60 H70 V90 H100 M60 0 V40 H20 V80 H60 V100' stroke='%230056b3' stroke-width='1.2' fill='none' stroke-opacity='0.12'/%3E%3Ccircle cx='30' cy='30' r='3.5' fill='%230056b3' fill-opacity='0.4'/%3E%3Ccircle cx='70' cy='60' r='3.5' fill='%230056b3' fill-opacity='0.3'/%3E%3C/svg%3E");
-            padding: 0.5rem 6%;
+            background-color: var(--header-bg);
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cpath d='M0 30 H30 V60 H70 V90 H100 M60 0 V40 H20 V80 H60 V100' stroke='%230056b3' stroke-width='1.2' fill='none' stroke-opacity='0.2'/%3E%3Ccircle cx='30' cy='30' r='3.5' fill='%230056b3' fill-opacity='0.5'/%3E%3Ccircle cx='70' cy='60' r='3.5' fill='%23ffffff' fill-opacity='0.3'/%3E%3C/svg%3E");
+            padding: 0.8rem 6%;
             position: sticky;
             top: 0;
             z-index: 1000;
@@ -56,35 +56,36 @@
             justify-content: space-between;
             align-items: center;
             box-shadow: var(--shadow-md);
-            border-bottom: 1px solid #e2e8f0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
         }
 
-        /* Contenedor del Logotipo Completamente Limpio (Sin fondo blanco) */
+        /* Contenedor del Logotipo Gigante Integrado */
         .header-logo-box {
             background-color: transparent;
             padding: 0;
             display: flex;
             align-items: center;
-            gap: 16px;
+            gap: 18px;
             text-decoration: none;
             transition: var(--transition);
         }
 
         .header-logo-box:hover {
-            transform: scale(1.04);
+            transform: scale(1.03);
         }
 
         .logo-img {
-            height: 110px; /* Tamaño maximizado */
+            height: 150px; /* Logotipo maximizado para apreciarse al detalle */
             width: auto;
             object-fit: contain;
         }
 
         .logo-company-name {
-            font-size: 2.8rem;
+            font-size: 3.2rem; /* Nombre más grande y espectacular */
             font-weight: 800;
-            color: var(--primary-color); /* Nombre de CoRe en color Azul Eléctrico */
+            color: var(--primary-color); /* Letras de CoRe en color Azul Eléctrico */
             letter-spacing: -0.5px;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
         }
 
         /* Menú de Navegación */
@@ -95,23 +96,23 @@
         }
 
         nav a {
-            color: var(--primary-color); /* Enlaces ahora en azul */
+            color: var(--white); 
             text-decoration: none;
             font-weight: 600;
-            font-size: 1.05rem;
-            padding: 0.6rem 1.1rem;
+            font-size: 1.1rem;
+            padding: 0.6rem 1.2rem;
             border-radius: 8px;
             transition: var(--transition);
         }
 
         nav a:hover {
-            background-color: rgba(0, 86, 179, 0.08); /* Fondo azul sutil al pasar el mouse */
-            color: var(--primary-hover);
+            background-color: rgba(255, 255, 255, 0.08);
+            color: var(--primary-color);
         }
 
         /* Sección Hero */
         .hero {
-            background: linear-gradient(rgba(15, 23, 42, 0.72), rgba(15, 23, 42, 0.72)), 
+            background: linear-gradient(rgba(15, 23, 42, 0.75), rgba(15, 23, 42, 0.75)), 
                         url('https://images.unsplash.com/photo-1613665813446-82a78c468a1d?auto=format&fit=crop&w=1200&q=80') no-repeat center center/cover;
             height: 50vh;
             display: flex;
@@ -133,25 +134,25 @@
         }
 
         .hero-btn {
-            background-color: var(--white); /* Botón del Hero invertido */
-            color: var(--primary-color);
-            padding: 0.9rem 2.2rem;
+            background-color: var(--primary-color); 
+            color: var(--white);
+            padding: 1rem 2.4rem;
             border-radius: 50px;
             font-weight: 700;
             text-decoration: none;
-            font-size: 1rem;
-            box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
+            font-size: 1.05rem;
+            box-shadow: 0 4px 15px rgba(0, 86, 179, 0.4);
             transition: var(--transition);
         }
 
         .hero-btn:hover {
-            background-color: var(--primary-color);
-            color: var(--white);
+            background-color: var(--white);
+            color: var(--primary-color);
             transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(0, 86, 179, 0.4);
+            box-shadow: 0 6px 20px rgba(255, 255, 255, 0.3);
         }
 
-        /* Sección Nosotros */
+        /* Sección Nosotros (Azul Grisáceo) */
         .about-section {
             max-width: 1200px;
             margin: -40px auto 4rem auto;
@@ -161,18 +162,18 @@
         }
 
         .about-main-card {
-            background-color: rgba(255, 255, 255, 0.98);
+            background-color: var(--bg-blue-grey); /* Fondo Azul Gris */
             backdrop-filter: blur(8px);
             border-radius: 16px;
             padding: 3.5rem 2.5rem;
             box-shadow: var(--shadow-lg);
             border-top: 5px solid var(--primary-color);
-            color: var(--text-dark);
+            color: var(--white);
         }
 
         .about-main-card h2 {
             font-size: 2.2rem;
-            color: var(--primary-color);
+            color: var(--white);
             margin-bottom: 2.5rem;
             font-weight: 800;
             text-align: center;
@@ -196,10 +197,10 @@
         }
 
         .mvv-box {
-            background-color: #f8fafc;
+            background-color: #1e293b; /* Azul Gris más oscuro para contraste interno */
             padding: 2.2rem 1.8rem;
             border-radius: 12px;
-            border: 1px solid #e2e8f0;
+            border: 1px solid rgba(255, 255, 255, 0.08);
             transition: var(--transition);
         }
 
@@ -207,7 +208,7 @@
             transform: translateY(-5px);
             box-shadow: var(--shadow-md);
             border-color: var(--primary-color);
-            background-color: var(--white);
+            background-color: #0f172a;
         }
 
         .mvv-icon {
@@ -218,7 +219,7 @@
 
         .mvv-box h3 {
             font-size: 1.4rem;
-            color: var(--primary-color);
+            color: var(--white);
             margin-bottom: 1rem;
             font-weight: 700;
         }
@@ -247,7 +248,7 @@
             content: "⚡";
             position: absolute;
             left: 0;
-            color: var(--primary-color); /* Rayo ahora azul */
+            color: var(--primary-color);
             font-weight: bold;
         }
 
@@ -262,12 +263,12 @@
             text-align: center;
             font-size: 2.2rem;
             margin-bottom: 3.5rem;
-            color: var(--white); /* Título blanco sobre fondo azul */
+            color: var(--white);
             font-weight: 800;
         }
 
         .section-title span {
-            color: #bae6fd; /* Resaltado en celeste muy claro para contraste perfecto */
+            color: #bae6fd;
         }
 
         .grid-services {
@@ -309,14 +310,14 @@
         }
 
         .card-service h3 {
-            color: var(--primary-color); /* Títulos de servicios en azul */
+            color: var(--primary-color);
             font-size: 1.4rem;
             font-weight: 700;
             margin-bottom: 1.2rem;
         }
 
         .card-service p {
-            color: var(--text-muted);
+            color: #475569;
             font-size: 0.95rem;
             margin-bottom: 0.8rem;
             line-height: 1.5;
@@ -354,7 +355,7 @@
 
         /* Sección Sectores */
         .sectors-section {
-            background-color: rgba(255, 255, 255, 0.05); /* Transparencia fina sobre fondo azul */
+            background-color: rgba(255, 255, 255, 0.05);
             padding: 5rem 1.5rem;
             text-align: center;
         }
@@ -409,10 +410,10 @@
             font-weight: 700;
         }
 
-        /* Sección Especial: Mascota Chuchito con Fondo Blanco */
+        /* Sección Especial: Mascota Chuchito (Fondo Azul Gris) */
         .mascot-section {
-            background: var(--white);
-            color: var(--text-dark);
+            background: var(--bg-blue-grey); /* Cambiado a Azul Gris */
+            color: var(--white);
             padding: 6rem 1.5rem;
             display: flex;
             justify-content: center;
@@ -426,11 +427,11 @@
             grid-template-columns: 1fr 1.5fr;
             gap: 3.5rem;
             align-items: center;
-            background: #f8fafc;
+            background: #1e293b; /* Azul Gris Oscuro */
             padding: 3.5rem;
             border-radius: 24px;
             box-shadow: var(--shadow-lg);
-            border: 1px solid #e2e8f0;
+            border: 1px solid rgba(255, 255, 255, 0.08);
             position: relative;
             overflow: hidden;
         }
@@ -439,7 +440,7 @@
             position: relative;
             border-radius: 20px;
             overflow: hidden;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
             aspect-ratio: 1 / 1;
             border: 4px solid var(--primary-color);
         }
@@ -471,12 +472,12 @@
             border-radius: 50px;
             margin-bottom: 1rem;
             text-transform: uppercase;
-            box-shadow: 0 4px 10px rgba(0, 86, 179, 0.2);
+            box-shadow: 0 4px 10px rgba(0, 86, 179, 0.25);
         }
 
         .mascot-info h2 {
             font-size: 2.4rem;
-            color: var(--primary-color);
+            color: var(--white);
             font-weight: 800;
             margin-bottom: 0.5rem;
         }
@@ -492,27 +493,27 @@
 
         .mascot-paragraph {
             font-size: 1.05rem;
-            color: var(--text-dark);
+            color: #cbd5e1;
             line-height: 1.7;
             margin-bottom: 1.5rem;
         }
 
         .mascot-footer-quote {
             font-style: italic;
-            color: var(--primary-color);
+            color: #60a5fa; /* Celeste claro para resaltar */
             font-size: 1.1rem;
             font-weight: 600;
             border-left: 3px solid var(--primary-color);
             padding-left: 12px;
         }
 
-        /* Pie de Página Blanco con Nodos Eléctricos Azules */
+        /* Pie de Página con el mismo color del Logotipo */
         footer {
-            background-color: var(--white); 
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cpath d='M0 30 H30 V60 H70 V90 H100 M60 0 V40 H20 V80 H60 V100' stroke='%230056b3' stroke-width='1.2' fill='none' stroke-opacity='0.08'/%3E%3Ccircle cx='30' cy='30' r='2.5' fill='%230056b3' fill-opacity='0.2'/%3E%3C/svg%3E");
+            background-color: var(--header-bg); 
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cpath d='M0 30 H30 V60 H70 V90 H100 M60 0 V40 H20 V80 H60 V100' stroke='%230056b3' stroke-width='1.2' fill='none' stroke-opacity='0.15'/%3E%3Ccircle cx='30' cy='30' r='2.5' fill='%230056b3' fill-opacity='0.3'/%3E%3C/svg%3E");
             color: var(--text-muted);
             padding: 4rem 1.5rem 2rem 1.5rem;
-            border-top: 1px solid #e2e8f0;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
         }
 
         .footer-content {
@@ -524,7 +525,7 @@
             gap: 2rem;
         }
 
-        /* Contenedor del Logo Inferior Puro y Limpio */
+        /* Contenedor del Logo Inferior Gigante */
         .footer-logo-wrapper {
             display: flex;
             justify-content: center;
@@ -535,11 +536,11 @@
         }
 
         .footer-logo-wrapper:hover {
-            transform: scale(1.04);
+            transform: scale(1.03);
         }
 
         .footer-logo-img {
-            height: 120px;
+            height: 160px; /* Tamaño del logo del footer ampliado */
             width: auto;
             object-fit: contain;
         }
@@ -547,12 +548,12 @@
         .footer-contacts {
             font-size: 1rem;
             text-align: center;
-            border-top: 1px solid #e2e8f0;
-            border-bottom: 1px solid #e2e8f0;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
             padding: 1.5rem 0;
             width: 100%;
             max-width: 600px;
-            color: var(--text-dark);
+            color: var(--white);
         }
 
         .footer-contacts p {
@@ -564,17 +565,17 @@
         }
 
         .footer-contacts strong {
-            color: var(--text-dark);
+            color: var(--white);
         }
 
         .footer-contacts a {
-            color: var(--primary-color);
+            color: #60a5fa;
             text-decoration: none;
             transition: var(--transition);
         }
 
         .footer-contacts a:hover {
-            color: var(--primary-hover);
+            color: var(--white);
             text-decoration: underline;
         }
 
@@ -585,7 +586,7 @@
         }
 
         .social-link {
-            background-color: #f1f5f9;
+            background-color: rgba(255, 255, 255, 0.05);
             width: 44px;
             height: 44px;
             border-radius: 50%;
@@ -593,7 +594,7 @@
             align-items: center;
             justify-content: center;
             transition: var(--transition);
-            border: 1px solid #e2e8f0;
+            border: 1px solid rgba(255, 255, 255, 0.08);
         }
 
         .social-link:hover {
@@ -612,13 +613,13 @@
         .social-icon-svg {
             width: 20px;
             height: 20px;
-            fill: var(--primary-color);
+            fill: var(--white);
             transition: var(--transition);
         }
 
         .copyright-text {
             font-size: 0.8rem;
-            color: var(--text-muted);
+            color: #64748b;
             margin-top: 1rem;
         }
 
@@ -666,7 +667,7 @@
                 margin-top: 1.5rem;
             }
             .logo-company-name {
-                font-size: 2.2rem;
+                font-size: 2.6rem;
             }
         }
     </style>
@@ -674,7 +675,7 @@
 <body>
 
     <header>
-        <!-- Enlace Superior Limpio: Logotipo Ampliado Sin Fondo + Nombre CoRe en Azul -->
+        <!-- Enlace Superior Limpio: Logotipo Gigante Integrado con fondo exacto + Nombre CoRe en Azul Eléctrico -->
         <a href="#inicio" class="header-logo-box">
             <img class="logo-img" src="logo.jfif" alt="CoRe Logo">
             <span class="logo-company-name">CoRe</span>
@@ -694,7 +695,7 @@
         <a href="https://wa.me/524446687711?text=Hola%20CoRe,%20me%20gustar%C3%ADa%20cotizar%20un%20servicio" class="hero-btn" target="_blank">Cotizar por WhatsApp</a>
     </section>
 
-    <!-- Sección: Nosotros -->
+    <!-- Sección: Nosotros (Con fondo Azul Gris) -->
     <section class="about-section" id="nosotros">
         <div class="about-main-card">
             <h2>Quiénes Somos</h2>
@@ -799,7 +800,7 @@
         </div>
     </section>
 
-    <!-- Sección Exclusiva y Dedicada para Chuchito con Fondo Claro -->
+    <!-- Sección Exclusiva y Dedicada para Chuchito (Fondo Azul Gris) -->
     <section class="mascot-section" id="mascota">
         <div class="mascot-container">
             
@@ -820,11 +821,11 @@
         </div>
     </section>
 
-    <!-- Pie de Página Blanco -->
+    <!-- Pie de Página integrado con el color del Logo -->
     <footer id="contacto">
         <div class="footer-content">
             
-            <!-- Contenedor del Logotipo Inferior Puro y Limpio -->
+            <!-- Contenedor del Logotipo Inferior Gigante -->
             <div class="footer-logo-wrapper">
                 <img class="footer-logo-img" src="logo.jfif" alt="CoRe Logo">
             </div>
@@ -835,7 +836,7 @@
                 <p>📞 <strong>WhatsApp:</strong> <a href="https://wa.me/524446687711" target="_blank">4446687711</a></p>
             </div>
 
-            <!-- Redes Sociales Oficiales en Azul -->
+            <!-- Redes Sociales Oficiales -->
             <div class="footer-social-media">
                 <a href="https://facebook.com" class="social-link" target="_blank" aria-label="Facebook">
                     <svg class="social-icon-svg" viewBox="0 0 24 24"><path d="M9 8H7v3h2v9h3v-9h3l.5-3H12V6c0-.88.77-1 1-1h2V2h-3c-2.9 0-4 1.6-4 3.5V8z"/></svg>

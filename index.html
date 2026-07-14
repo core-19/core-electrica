@@ -5,79 +5,115 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CoRe | Suministro e Instalaciones Eléctricas</title>
     
+    <!-- Tipografía Moderna desde Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght=300;400;500;600;700;800&display=swap" rel="stylesheet">
 
     <style>
+        /* Variables de Diseño (Optimizadas con Azul Gris y Fondo de Logo) */
         :root {
-            --primary-color: #0056b3;
-            --primary-hover: #004085;
-            --header-bg: #101726;
-            --bg-light: #0056b3;
-            --bg-blue-grey: #334155;
-            --text-dark: #0f172a;
-            --text-muted: #cbd5e1;
-            --white: #ffffff;
-            --shadow-lg: 0 20px 25px -5px rgb(0 0 0 / 0.15);
+            --primary-color: #0056b3;       /* Azul Eléctrico Principal */
+            --primary-hover: #004085;       /* Azul Oscuro */
+            --header-bg: #101726;           /* Color exacto del fondo de tu logo.jfif (Azul Marino Profundo) */
+            --bg-light: #0056b3;            /* El fondo general sigue siendo el Azul Eléctrico */
+            --bg-blue-grey: #334155;        /* Azul Gris / Slate para Quiénes Somos y Chuchito */
+            --text-dark: #0f172a;           /* Texto oscuro premium */
+            --text-muted: #cbd5e1;          /* Texto secundario claro para fondos oscuros */
+            --white: #ffffff;               
+            --shadow-sm: 0 4px 6px -1px rgb(0 0 0 / 0.05);
+            --shadow-md: 0 10px 15px -3px rgb(0 0 0 / 0.08), 0 4px 6px -4px rgb(0 0 0 / 0.08);
+            --shadow-lg: 0 20px 25px -5px rgb(0 0 0 / 0.15), 0 8px 10px -6px rgb(0 0 0 / 0.15);
             --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Outfit', sans-serif; scroll-behavior: smooth; }
+        /* Reset y Estilos Base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Outfit', sans-serif;
+            scroll-behavior: smooth;
+        }
 
-        body { background-color: var(--bg-light); color: var(--white); line-height: 1.6; }
+        body {
+            background-color: var(--bg-light);
+            /* Fondo de Circuitos Eléctricos con Líneas Blancas sobre el fondo Azul */
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cpath d='M0 20 H40 V60 H80 V90 H120 M60 0 V40 H20 V80 H60 V120' stroke='%23ffffff' stroke-width='1.2' fill='none' stroke-opacity='0.15'/%3E%3Ccircle cx='40' cy='20' r='3.5' fill='%23ffffff' fill-opacity='0.6'/%3E%3Ccircle cx='80' cy='60' r='3.5' fill='%23ffffff' fill-opacity='0.5'/%3E%3Ccircle cx='20' cy='80' r='2.5' fill='%23ffffff' fill-opacity='0.5'/%3E%3Ccircle cx='60' cy='40' r='2.5' fill='%23ffffff' fill-opacity='0.4'/%3E%3C/svg%3E");
+            color: var(--white);
+            line-height: 1.6;
+        }
 
+        /* Cabecera / Header con el fondo exacto del Logotipo */
         header {
             background-color: var(--header-bg);
-            padding: 1rem 6%;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cpath d='M0 30 H30 V60 H70 V90 H100 M60 0 V40 H20 V80 H60 V100' stroke='%230056b3' stroke-width='1.2' fill='none' stroke-opacity='0.2'/%3E%3Ccircle cx='30' cy='30' r='3.5' fill='%230056b3' fill-opacity='0.5'/%3E%3Ccircle cx='70' cy='60' r='3.5' fill='%23ffffff' fill-opacity='0.3'/%3E%3C/svg%3E");
+            padding: 0.8rem 6%;
             position: sticky;
             top: 0;
             z-index: 1000;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            box-shadow: var(--shadow-md);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
         }
 
-        /* Contenedor del Logo con fondo blanco para contraste */
-        .logo-bg-wrapper {
-            background-color: var(--white);
-            padding: 12px;
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-        }
-
+        /* Contenedor del Logotipo Gigante Integrado */
         .header-logo-box {
+            background-color: transparent;
+            padding: 0;
             display: flex;
             align-items: center;
-            gap: 20px;
+            gap: 18px;
             text-decoration: none;
             transition: var(--transition);
         }
 
+        .header-logo-box:hover {
+            transform: scale(1.03);
+        }
+
         .logo-img {
-            height: 300px; /* Tamaño duplicado */
+            height: 300px; /* Logotipo maximizado para apreciarse al detalle */
             width: auto;
             object-fit: contain;
         }
 
         .logo-company-name {
-            font-size: 3.2rem;
+            font-size: 3.2rem; /* Nombre más grande y espectacular */
             font-weight: 800;
-            color: var(--white); /* Cambiado a blanco para contraste con el fondo oscuro */
-            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            color: var(--primary-color); /* Letras de CoRe en color Azul Eléctrico */
+            letter-spacing: -0.5px;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
         }
 
-        nav { display: flex; gap: 1.5rem; align-items: center; }
-        nav a { color: var(--white); text-decoration: none; font-weight: 600; padding: 0.6rem 1rem; }
-        nav a:hover { color: #60a5fa; }
+        /* Menú de Navegación */
+        nav {
+            display: flex;
+            gap: 1.2rem;
+            align-items: center;
+        }
+
+        nav a {
+            color: var(--white); 
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            padding: 0.6rem 1.2rem;
+            border-radius: 8px;
+            transition: var(--transition);
+        }
+
+        nav a:hover {
+            background-color: rgba(255, 255, 255, 0.08);
+            color: var(--primary-color);
+        }
 
         /* Sección Hero */
         .hero {
-            background: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.8)), 
-                        url('https://images.unsplash.com/photo-1613665813446-82a78c468a1d?auto=format&fit=crop&w=1200&q=80') center/cover;
+            background: linear-gradient(rgba(15, 23, 42, 0.75), rgba(15, 23, 42, 0.75)), 
+                        url('https://images.unsplash.com/photo-1613665813446-82a78c468a1d?auto=format&fit=crop&w=1200&q=80') no-repeat center center/cover;
             height: 50vh;
             display: flex;
             flex-direction: column;
@@ -87,38 +123,561 @@
             padding: 0 1.5rem;
         }
 
-        /* Sección Nosotros y Chuchito */
-        .about-section, .mascot-section { max-width: 1200px; margin: 40px auto; padding: 3rem; background-color: var(--bg-blue-grey); border-radius: 20px; }
-        
-        .mascot-container { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: center; }
-        .mascot-img-real { width: 100%; border-radius: 15px; border: 4px solid var(--primary-color); }
-
-        /* Pie de Página */
-        footer { background-color: var(--header-bg); padding: 4rem 1.5rem; text-align: center; color: var(--white); }
-        
-        .footer-logo-wrapper {
-            background-color: var(--white);
-            padding: 15px;
-            border-radius: 15px;
-            display: inline-block;
+        .hero h1 {
+            color: var(--white);
+            font-size: 2.2rem;
+            font-weight: 700;
+            max-width: 950px;
+            line-height: 1.3;
             margin-bottom: 2rem;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            text-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+        }
+
+        .hero-btn {
+            background-color: var(--primary-color); 
+            color: var(--white);
+            padding: 1rem 2.4rem;
+            border-radius: 50px;
+            font-weight: 700;
+            text-decoration: none;
+            font-size: 1.05rem;
+            box-shadow: 0 4px 15px rgba(0, 86, 179, 0.4);
+            transition: var(--transition);
+        }
+
+        .hero-btn:hover {
+            background-color: var(--white);
+            color: var(--primary-color);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(255, 255, 255, 0.3);
+        }
+
+        /* Sección Nosotros (Azul Grisáceo) */
+        .about-section {
+            max-width: 1200px;
+            margin: -40px auto 4rem auto;
+            padding: 0 1.5rem;
+            position: relative;
+            z-index: 10;
+        }
+
+        .about-main-card {
+            background-color: var(--bg-blue-grey); /* Fondo Azul Gris */
+            backdrop-filter: blur(8px);
+            border-radius: 16px;
+            padding: 3.5rem 2.5rem;
+            box-shadow: var(--shadow-lg);
+            border-top: 5px solid var(--primary-color);
+            color: var(--white);
+        }
+
+        .about-main-card h2 {
+            font-size: 2.2rem;
+            color: var(--white);
+            margin-bottom: 2.5rem;
+            font-weight: 800;
+            text-align: center;
+            position: relative;
+        }
+
+        .about-main-card h2::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background-color: var(--primary-color);
+            margin: 10px auto 0 auto;
+            border-radius: 2px;
+        }
+
+        .mvv-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .mvv-box {
+            background-color: #1e293b; /* Azul Gris más oscuro para contraste interno */
+            padding: 2.2rem 1.8rem;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: var(--transition);
+        }
+
+        .mvv-box:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--primary-color);
+            background-color: #0f172a;
+        }
+
+        .mvv-icon {
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+            display: inline-block;
+        }
+
+        .mvv-box h3 {
+            font-size: 1.4rem;
+            color: var(--white);
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .mvv-box p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .valores-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .valores-list li {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            margin-bottom: 0.8rem;
+            position: relative;
+            padding-left: 1.5rem;
+            line-height: 1.4;
+        }
+
+        .valores-list li::before {
+            content: "⚡";
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        /* Bloque de Servicios */
+        .services-section {
+            max-width: 1200px;
+            margin: 0 auto 4rem auto;
+            padding: 0 1.5rem;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            margin-bottom: 3.5rem;
+            color: var(--white);
+            font-weight: 800;
+        }
+
+        .section-title span {
+            color: #bae6fd;
+        }
+
+        .grid-services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .card-service {
+            background-color: var(--white);
+            padding: 3rem 2rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow-md);
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border-bottom: 4px solid transparent;
+            transition: var(--transition);
+            color: var(--text-dark);
+        }
+
+        .card-service:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+            border-bottom-color: var(--primary-color);
+        }
+
+        .card-service-img {
+            width: 120px;
+            height: 120px;
+            object-fit: contain;
+            margin-bottom: 1.8rem;
+            transition: var(--transition);
+        }
+
+        .card-service:hover .card-service-img {
+            transform: scale(1.1) rotate(2deg);
+        }
+
+        .card-service h3 {
+            color: var(--primary-color);
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 1.2rem;
+        }
+
+        .card-service p {
+            color: #475569;
+            font-size: 0.95rem;
+            margin-bottom: 0.8rem;
+            line-height: 1.5;
+            text-align: left;
+            width: 100%;
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+        }
+
+        .card-service p::before {
+            content: "⚡";
+            color: var(--primary-color);
+        }
+
+        .card-service-btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+            color: var(--white);
+            padding: 0.6rem 2rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.9rem;
+            transition: var(--transition);
+            margin-top: 2rem;
+            width: 100%;
+        }
+
+        .card-service-btn:hover {
+            background-color: var(--primary-hover);
+            border-color: var(--primary-hover);
+        }
+
+        /* Sección Sectores */
+        .sectors-section {
+            background-color: rgba(255, 255, 255, 0.05);
+            padding: 5rem 1.5rem;
+            text-align: center;
+        }
+
+        .sectors-section h2 {
+            font-size: 2.2rem;
+            color: var(--white);
+            margin-bottom: 3.5rem;
+            font-weight: 800;
+        }
+
+        .grid-sectors {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .card-sector {
+            background-color: var(--white);
+            border-radius: 12px;
+            overflow: hidden;
+            text-align: left;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition);
+        }
+
+        .card-sector:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .sector-image-file {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .card-sector:hover .sector-image-file {
+            transform: scale(1.03);
+        }
+
+        .sector-text-box {
+            padding: 1.8rem;
+        }
+
+        .sector-text-box h3 {
+            color: var(--primary-color);
+            font-size: 1.4rem;
+            font-weight: 700;
+        }
+
+        /* Sección Especial: Mascota Chuchito (Fondo Azul Gris) */
+        .mascot-section {
+            background: var(--bg-blue-grey); /* Cambiado a Azul Gris */
+            color: var(--white);
+            padding: 6rem 1.5rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .mascot-container {
+            max-width: 1000px;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 3.5rem;
+            align-items: center;
+            background: #1e293b; /* Azul Gris Oscuro */
+            padding: 3.5rem;
+            border-radius: 24px;
+            box-shadow: var(--shadow-lg);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .mascot-image-wrapper {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+            aspect-ratio: 1 / 1;
+            border: 4px solid var(--primary-color);
+        }
+
+        .mascot-img-real {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .mascot-container:hover .mascot-img-real {
+            transform: scale(1.05);
+        }
+
+        .mascot-info {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .mascot-badge-pill {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 0.4rem 1.2rem;
+            font-size: 0.8rem;
+            font-weight: 800;
+            border-radius: 50px;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            box-shadow: 0 4px 10px rgba(0, 86, 179, 0.25);
+        }
+
+        .mascot-info h2 {
+            font-size: 2.4rem;
+            color: var(--white);
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+        }
+
+        .mascot-subtitle {
+            font-size: 1rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+        }
+
+        .mascot-paragraph {
+            font-size: 1.05rem;
+            color: #cbd5e1;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+
+        .mascot-footer-quote {
+            font-style: italic;
+            color: #60a5fa; /* Celeste claro para resaltar */
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-left: 3px solid var(--primary-color);
+            padding-left: 12px;
+        }
+
+        /* Pie de Página con el mismo color del Logotipo */
+        footer {
+            background-color: var(--header-bg); 
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cpath d='M0 30 H30 V60 H70 V90 H100 M60 0 V40 H20 V80 H60 V100' stroke='%230056b3' stroke-width='1.2' fill='none' stroke-opacity='0.15'/%3E%3Ccircle cx='30' cy='30' r='2.5' fill='%230056b3' fill-opacity='0.3'/%3E%3C/svg%3E");
+            color: var(--text-muted);
+            padding: 4rem 1.5rem 2rem 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        /* Contenedor del Logo Inferior Gigante */
+        .footer-logo-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: transparent;
+            padding: 0;
+            transition: var(--transition);
+        }
+
+        .footer-logo-wrapper:hover {
+            transform: scale(1.03);
         }
 
         .footer-logo-img {
-            height: 320px; /* Tamaño duplicado para el footer */
+            height: 350px; /* Tamaño del logo del footer ampliado */
             width: auto;
             object-fit: contain;
+        }
+
+        .footer-contacts {
+            font-size: 1rem;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 1.5rem 0;
+            width: 100%;
+            max-width: 600px;
+            color: var(--white);
+        }
+
+        .footer-contacts p {
+            margin: 0.6rem 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .footer-contacts strong {
+            color: var(--white);
+        }
+
+        .footer-contacts a {
+            color: #60a5fa;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-contacts a:hover {
+            color: var(--white);
+            text-decoration: underline;
+        }
+
+        /* Iconos de Redes Sociales */
+        .footer-social-media {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .social-link {
+            background-color: rgba(255, 255, 255, 0.05);
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .social-link:hover {
+            background-color: var(--primary-color);
+            transform: scale(1.1);
+        }
+
+        .social-link:hover .social-icon-svg {
+            fill: var(--white);
+        }
+
+        .social-link.instagram:hover {
+            background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
+        }
+
+        .social-icon-svg {
+            width: 20px;
+            height: 20px;
+            fill: var(--white);
+            transition: var(--transition);
+        }
+
+        .copyright-text {
+            font-size: 0.8rem;
+            color: #64748b;
+            margin-top: 1rem;
+        }
+
+        /* Adaptabilidad / Responsive */
+        @media (max-width: 992px) {
+            .mascot-container {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+                padding: 2.5rem;
+            }
+            .mascot-image-wrapper {
+                max-width: 320px;
+                margin: 0 auto;
+            }
+            .mascot-info {
+                align-items: center;
+                text-align: center;
+            }
+            .mascot-footer-quote {
+                border-left: none;
+                padding-left: 0;
+            }
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                gap: 1.2rem;
+                padding: 1.2rem;
+            }
+            nav {
+                gap: 0.4rem;
+                width: 100%;
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+            nav a {
+                font-size: 0.85rem;
+                padding: 0.4rem 0.6rem;
+            }
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+            .about-section {
+                margin-top: 1.5rem;
+            }
+            .logo-company-name {
+                font-size: 2.6rem;
+            }
         }
     </style>
 </head>
 <body>
 
     <header>
+        <!-- Enlace Superior Limpio: Logotipo Gigante Integrado con fondo exacto + Nombre CoRe en Azul Eléctrico -->
         <a href="#inicio" class="header-logo-box">
-            <div class="logo-bg-wrapper">
-                <img class="logo-img" src="logo.jfif.png" alt="CoRe Logo">
-            </div>
+            <img class="logo-img" src="logo.jfif.png" alt="CoRe Logo">
             <span class="logo-company-name">CoRe</span>
         </a>
         
@@ -127,21 +686,171 @@
             <a href="#nosotros">Nosotros</a>
             <a href="#servicios">Servicios</a>
             <a href="#contacto">Contacto</a>
+            <a href="#mascota">Chuchito 🐶</a>
         </nav>
     </header>
 
     <section class="hero" id="inicio">
-        <h1>Suministro y soluciones eléctricas integrales.</h1>
-        <a href="#" style="background:var(--primary-color); color:white; padding:15px 30px; border-radius:50px; text-decoration:none; margin-top:20px;">Cotizar ahora</a>
+        <h1>Suministro y soluciones confiables en baja y media tensión, instalaciones residenciales, comerciales e industriales, paneles solares y climatización.</h1>
+        <a href="https://wa.me/524446687711?text=Hola%20CoRe,%20me%20gustar%C3%ADa%20cotizar%20un%20servicio" class="hero-btn" target="_blank">Cotizar por WhatsApp</a>
     </section>
 
-    <!-- ... (El resto de tu contenido se mantiene igual) ... -->
+    <!-- Sección: Nosotros (Con fondo Azul Gris) -->
+    <section class="about-section" id="nosotros">
+        <div class="about-main-card">
+            <h2>Quiénes Somos</h2>
+            <div class="mvv-container">
+                
+                <!-- Misión -->
+                <div class="mvv-box">
+                    <span class="mvv-icon">🎯</span>
+                    <h3>Misión</h3>
+                    <p>Proporcionar soluciones integrales y altamente confiables en ingeniería eléctrica, climatización y energía solar. Nos comprometemos a ejecutar cada proyecto bajo las normas de seguridad más estrictas y con materiales de calidad garantizada, impulsando el bienestar y desarrollo de nuestros clientes en el sector residencial, comercial e industrial.</p>
+                </div>
 
-    <footer id="contacto">
-        <div class="footer-logo-wrapper">
-            <img class="footer-logo-img" src="logo.jfif.png" alt="CoRe Logo">
+                <!-- Visión -->
+                <div class="mvv-box">
+                    <span class="mvv-icon">💡</span>
+                    <h3>Visión</h3>
+                    <p>Consolidarnos en la región como la empresa líder de referencia en el sector de servicios eléctricos y energías renovables, destacando por nuestra excelencia técnica, constante innovación y un firme compromiso ecológico que aporte valor real al medio ambiente y a la sociedad.</p>
+                </div>
+
+                <!-- Valores -->
+                <div class="mvv-box">
+                    <span class="mvv-icon">💎</span>
+                    <h3>Valores</h3>
+                    <ul class="valores-list">
+                        <li><strong>Seguridad:</strong> Es nuestra prioridad número uno en cada instalación.</li>
+                        <li><strong>Calidad:</strong> Trabajamos solo con los mejores materiales certificados.</li>
+                        <li><strong>Honestidad:</strong> Transparencia absoluta en cotizaciones y proyectos.</li>
+                        <li><strong>Compromiso:</strong> Cumplimiento estricto de tiempos y especificaciones.</li>
+                    </ul>
+                </div>
+
+            </div>
         </div>
-        <p>© 2026 CoRe Suministro e Instalaciones Eléctricas.</p>
+    </section>
+
+    <!-- Sección de Servicios -->
+    <section class="services-section" id="servicios">
+        <h2 class="section-title">Nuestros <span>Servicios Especializados</span></h2>
+        
+        <div class="grid-services">
+            
+            <!-- Paneles Solares -->
+            <div class="card-service" id="paneles">
+                <img class="card-service-img" src="panel%20solar.png" alt="Paneles Solares">
+                <h3>Paneles Solares</h3>
+                <p>Instalaciones profesionales y mantenimientos preventivos y correctivos.</p>
+                <p>Venta autorizada de paneles solares de alta eficiencia.</p>
+                <p>Estudios de ahorro energético a tu medida.</p>
+                <a href="https://wa.me/524446687711?text=Hola%20CoRe,%20me%20interesa%20informaci%C3%B3n%20sobre%20Paneles%20Solares" class="card-service-btn" target="_blank">Saber más</a>
+            </div>
+
+            <!-- Aires Acondicionados -->
+            <div class="card-service" id="climatizacion">
+                <img class="card-service-img" src="aire%20acondicionado.png" alt="Aires Acondicionados">
+                <h3>Aires Acondicionados</h3>
+                <p>Diseño de sistemas de climatización e instalación de alta precisión.</p>
+                <p>Mantenimiento y recarga de refrigerante.</p>
+                <p>Venta de equipos de aire acondicionado con tecnología Inverter.</p>
+                <a href="https://wa.me/524446687711?text=Hola%20CoRe,%20me%20interesa%20informaci%C3%B3n%20sobre%20Aire%20Acondicionado" class="card-service-btn" target="_blank">Saber más</a>
+            </div>
+
+            <!-- Instalaciones Eléctricas -->
+            <div class="card-service" id="proyectos">
+                <img class="card-service-img" src="tablero.png" alt="Instalaciones Eléctricas">
+                <h3>Instalaciones Eléctricas</h3>
+                <p>Levantamientos, diagramas unifilares y memorias de cálculo.</p>
+                <p>Instalaciones eléctricas residenciales, comerciales e industriales.</p>
+                <p>Mantenimiento correctivo urgente y preventivo.</p>
+                <p>Venta de material y equipo eléctrico certificado.</p>
+                <a href="https://wa.me/524446687711?text=Hola%20CoRe,%20me%20interesa%20un%20Levantamiento%20o%20Diagrama%20El%C3%A9ctrico" class="card-service-btn" target="_blank">Saber más</a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Sectores que Atendemos -->
+    <section class="sectors-section">
+        <h2>Sectores que Atendemos</h2>
+        <div class="grid-sectors">
+            
+            <div class="card-sector">
+                <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=400&q=80" alt="Residencial" class="sector-image-file">
+                <div class="sector-text-box">
+                    <h3>Residencial</h3>
+                </div>
+            </div>
+
+            <div class="card-sector">
+                <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=400&q=80" alt="Comercial" class="sector-image-file">
+                <div class="sector-text-box">
+                    <h3>Comercial</h3>
+                </div>
+            </div>
+
+            <div class="card-sector">
+                <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=400&q=80" alt="Industrial" class="sector-image-file">
+                <div class="sector-text-box">
+                    <h3>Industrial</h3>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Sección Exclusiva y Dedicada para Chuchito (Fondo Azul Gris) -->
+    <section class="mascot-section" id="mascota">
+        <div class="mascot-container">
+            
+            <div class="mascot-image-wrapper">
+                <img src="chuchito%20animado.jpg" alt="Chuchito animado" class="mascot-img-real">
+            </div>
+
+            <div class="mascot-info">
+                <span class="mascot-badge-pill">Mascota Oficial</span>
+                <h2>Conoce a Chuchito ⚡🐶</h2>
+                <p class="mascot-subtitle">Supervisor General de Seguridad y Buenas Vibras</p>
+                <p class="mascot-paragraph">
+                    ¡Hola! Soy <strong>Chuchito</strong>, el integrante más carismático y con más energía de todo el equipo de <strong>CoRe</strong>. Mi trabajo diario consiste en acompañar al ingeniero y a todo el personal técnico, asegurándome de que todas las instalaciones estén perfectamente aterrizadas, seguras y, sobre todo, cargadas con la mejor actitud y felicidad.
+                </p>
+                <p class="mascot-footer-quote">"¡Instalaciones seguras y colitas felices en todo San Luis Potosí!"</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Pie de Página integrado con el color del Logo -->
+    <footer id="contacto">
+        <div class="footer-content">
+            
+            <!-- Contenedor del Logotipo Inferior Gigante -->
+            <div class="footer-logo-wrapper">
+                <img class="footer-logo-img" src="logo.jfif.png" alt="CoRe Logo">
+            </div>
+
+            <div class="footer-contacts">
+                <p>👤 <strong>Ing. Luis Fernando Colunga Cuevas</strong></p>
+                <p>📧 <strong>Correo:</strong> <a href="mailto:fcolunga45@gmail.com">fcolunga45@gmail.com</a></p>
+                <p>📞 <strong>WhatsApp:</strong> <a href="https://wa.me/524446687711" target="_blank">4446687711</a></p>
+            </div>
+
+            <!-- Redes Sociales Oficiales -->
+            <div class="footer-social-media">
+                <a href="https://facebook.com" class="social-link" target="_blank" aria-label="Facebook">
+                    <svg class="social-icon-svg" viewBox="0 0 24 24"><path d="M9 8H7v3h2v9h3v-9h3l.5-3H12V6c0-.88.77-1 1-1h2V2h-3c-2.9 0-4 1.6-4 3.5V8z"/></svg>
+                </a>
+                <a href="https://www.instagram.com/co_re.19?utm_source=qr&igsh=a3F4ZXJucHlvYTZ3" class="social-link instagram" target="_blank" aria-label="Instagram">
+                    <svg class="social-icon-svg" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+                </a>
+                <a href="https://youtube.com" class="social-link" target="_blank" aria-label="YouTube">
+                    <svg class="social-icon-svg" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93 Spoon .502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                </a>
+            </div>
+
+            <p class="copyright-text">© 2026 CoRe Suministro e Instalaciones Eléctricas. Todos los derechos reservados.</p>
+        </div>
     </footer>
 
 </body>

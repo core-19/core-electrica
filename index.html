@@ -11,19 +11,19 @@
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght=300;400;500;600;700;800&display=swap" rel="stylesheet">
 
     <style>
-        /* Variables de Diseño (Optimizadas con Azul Gris y Fondo de Logo) */
+        /* Variables de Diseño */
         :root {
-            --primary-color: #0056b3;       /* Azul Eléctrico Principal */
-            --primary-hover: #004085;       /* Azul Oscuro */
-            --header-bg: #101726;           /* Color exacto del fondo de tu logo.jfif (Azul Marino Profundo) */
-            --bg-light: #0056b3;            /* El fondo general sigue siendo el Azul Eléctrico */
-            --bg-blue-grey: #334155;        /* Azul Gris / Slate para Quiénes Somos y Chuchito */
-            --text-dark: #0f172a;           /* Texto oscuro premium */
-            --text-muted: #cbd5e1;          /* Texto secundario claro para fondos oscuros */
-            --white: #ffffff;               
+            --primary-color: #0056b3;       /* Azul Principal */
+            --primary-hover: #004085;       /* Azul Oscuro al pasar el mouse */
+            --accent-color: #ffb300;        /* Amarillo/Oro Eléctrico */
+            --accent-hover: #e09e00;
+            --bg-light: #f4f8fc;            /* Fondo base limpio */
+            --text-dark: #0f172a;           /* Texto casi negro premium */
+            --text-muted: #475569;          /* Texto secundario gris */
+            --white: #ffffff;
             --shadow-sm: 0 4px 6px -1px rgb(0 0 0 / 0.05);
             --shadow-md: 0 10px 15px -3px rgb(0 0 0 / 0.08), 0 4px 6px -4px rgb(0 0 0 / 0.08);
-            --shadow-lg: 0 20px 25px -5px rgb(0 0 0 / 0.15), 0 8px 10px -6px rgb(0 0 0 / 0.15);
+            --shadow-lg: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
             --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
@@ -38,17 +38,17 @@
 
         body {
             background-color: var(--bg-light);
-            /* Fondo de Circuitos Eléctricos con Líneas Blancas sobre el fondo Azul */
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cpath d='M0 20 H40 V60 H80 V90 H120 M60 0 V40 H20 V80 H60 V120' stroke='%23ffffff' stroke-width='1.2' fill='none' stroke-opacity='0.15'/%3E%3Ccircle cx='40' cy='20' r='3.5' fill='%23ffffff' fill-opacity='0.6'/%3E%3Ccircle cx='80' cy='60' r='3.5' fill='%23ffffff' fill-opacity='0.5'/%3E%3Ccircle cx='20' cy='80' r='2.5' fill='%23ffffff' fill-opacity='0.5'/%3E%3Ccircle cx='60' cy='40' r='2.5' fill='%23ffffff' fill-opacity='0.4'/%3E%3C/svg%3E");
-            color: var(--white);
+            /* Fondo de Circuitos Eléctricos del Cuerpo de la Página */
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cpath d='M0 20 H40 V60 H80 V90 H120 M60 0 V40 H20 V80 H60 V120' stroke='%230056b3' stroke-width='1.2' fill='none' stroke-opacity='0.12'/%3E%3Ccircle cx='40' cy='20' r='3.5' fill='%23ffb300' fill-opacity='0.5'/%3E%3Ccircle cx='80' cy='60' r='3.5' fill='%230056b3' fill-opacity='0.4'/%3E%3Ccircle cx='20' cy='80' r='2.5' fill='%23ffb300' fill-opacity='0.4'/%3E%3Ccircle cx='60' cy='40' r='2.5' fill='%230056b3' fill-opacity='0.3'/%3E%3C/svg%3E");
+            color: var(--text-dark);
             line-height: 1.6;
         }
 
-        /* Cabecera / Header con el fondo exacto del Logotipo */
+        /* Encabezado / Header con Fondo de Nodos Eléctricos Integrado */
         header {
-            background-color: var(--header-bg);
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cpath d='M0 30 H30 V60 H70 V90 H100 M60 0 V40 H20 V80 H60 V100' stroke='%230056b3' stroke-width='1.2' fill='none' stroke-opacity='0.2'/%3E%3Ccircle cx='30' cy='30' r='3.5' fill='%230056b3' fill-opacity='0.5'/%3E%3Ccircle cx='70' cy='60' r='3.5' fill='%23ffffff' fill-opacity='0.3'/%3E%3C/svg%3E");
-            padding: 0.8rem 6%;
+            background-color: var(--primary-color);
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cpath d='M0 30 H30 V60 H70 V90 H100 M60 0 V40 H20 V80 H60 V100' stroke='%23ffffff' stroke-width='1.2' fill='none' stroke-opacity='0.15'/%3E%3Ccircle cx='30' cy='30' r='3.5' fill='%23ffb300' fill-opacity='0.7'/%3E%3Ccircle cx='70' cy='60' r='3.5' fill='%23ffffff' fill-opacity='0.6'/%3E%3C/svg%3E");
+            padding: 0.5rem 6%;
             position: sticky;
             top: 0;
             z-index: 1000;
@@ -56,36 +56,35 @@
             justify-content: space-between;
             align-items: center;
             box-shadow: var(--shadow-md);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
         }
 
-        /* Contenedor del Logotipo Gigante Integrado */
+        /* Contenedor del Logotipo Completamente Limpio (Sin fondo blanco) */
         .header-logo-box {
             background-color: transparent;
             padding: 0;
             display: flex;
             align-items: center;
-            gap: 18px;
+            gap: 16px;
             text-decoration: none;
             transition: var(--transition);
         }
 
         .header-logo-box:hover {
-            transform: scale(1.03);
+            transform: scale(1.04);
         }
 
         .logo-img {
-            height: 210px; /* Logotipo maximizado para apreciarse al detalle */
+            height: 160px; /* Tamaño maximizado para visibilidad total */
             width: auto;
             object-fit: contain;
         }
 
         .logo-company-name {
-            font-size: 3.2rem; /* Nombre más grande y espectacular */
+            font-size: 2.8rem;
             font-weight: 800;
-            color: var(--primary-color); /* Letras de CoRe en color Azul Eléctrico */
+            color: var(--accent-color); /* Color oro premium para contrastar con el azul */
             letter-spacing: -0.5px;
-            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
         }
 
         /* Menú de Navegación */
@@ -96,23 +95,24 @@
         }
 
         nav a {
-            color: var(--white); 
+            color: var(--white);
             text-decoration: none;
             font-weight: 600;
-            font-size: 1.1rem;
-            padding: 0.6rem 1.2rem;
+            font-size: 1.05rem;
+            padding: 0.6rem 1.1rem;
             border-radius: 8px;
             transition: var(--transition);
+            text-shadow: 0 1px 2px rgba(0,0,0,0.2);
         }
 
         nav a:hover {
-            background-color: rgba(255, 255, 255, 0.08);
-            color: var(--primary-color);
+            background-color: rgba(255, 255, 255, 0.15);
+            color: var(--accent-color);
         }
 
         /* Sección Hero */
         .hero {
-            background: linear-gradient(rgba(15, 23, 42, 0.75), rgba(15, 23, 42, 0.75)), 
+            background: linear-gradient(rgba(15, 23, 42, 0.72), rgba(15, 23, 42, 0.72)), 
                         url('https://images.unsplash.com/photo-1613665813446-82a78c468a1d?auto=format&fit=crop&w=1200&q=80') no-repeat center center/cover;
             height: 50vh;
             display: flex;
@@ -134,25 +134,24 @@
         }
 
         .hero-btn {
-            background-color: var(--primary-color); 
-            color: var(--white);
-            padding: 1rem 2.4rem;
+            background-color: var(--accent-color);
+            color: var(--text-dark);
+            padding: 0.9rem 2.2rem;
             border-radius: 50px;
             font-weight: 700;
             text-decoration: none;
-            font-size: 1.05rem;
-            box-shadow: 0 4px 15px rgba(0, 86, 179, 0.4);
+            font-size: 1rem;
+            box-shadow: 0 4px 15px rgba(255, 179, 0, 0.4);
             transition: var(--transition);
         }
 
         .hero-btn:hover {
             background-color: var(--white);
-            color: var(--primary-color);
             transform: translateY(-3px);
             box-shadow: 0 6px 20px rgba(255, 255, 255, 0.3);
         }
 
-        /* Sección Nosotros (Azul Grisáceo) */
+        /* Sección Nosotros */
         .about-section {
             max-width: 1200px;
             margin: -40px auto 4rem auto;
@@ -162,18 +161,17 @@
         }
 
         .about-main-card {
-            background-color: var(--bg-blue-grey); /* Fondo Azul Gris */
+            background-color: rgba(255, 255, 255, 0.96);
             backdrop-filter: blur(8px);
             border-radius: 16px;
             padding: 3.5rem 2.5rem;
             box-shadow: var(--shadow-lg);
             border-top: 5px solid var(--primary-color);
-            color: var(--white);
         }
 
         .about-main-card h2 {
             font-size: 2.2rem;
-            color: var(--white);
+            color: var(--primary-color);
             margin-bottom: 2.5rem;
             font-weight: 800;
             text-align: center;
@@ -185,7 +183,7 @@
             display: block;
             width: 80px;
             height: 4px;
-            background-color: var(--primary-color);
+            background-color: var(--accent-color);
             margin: 10px auto 0 auto;
             border-radius: 2px;
         }
@@ -197,18 +195,18 @@
         }
 
         .mvv-box {
-            background-color: #1e293b; /* Azul Gris más oscuro para contraste interno */
+            background-color: rgba(248, 250, 252, 0.85);
             padding: 2.2rem 1.8rem;
             border-radius: 12px;
-            border: 1px solid rgba(255, 255, 255, 0.08);
+            border: 1px solid #e2e8f0;
             transition: var(--transition);
         }
 
         .mvv-box:hover {
             transform: translateY(-5px);
             box-shadow: var(--shadow-md);
-            border-color: var(--primary-color);
-            background-color: #0f172a;
+            border-color: var(--accent-color);
+            background-color: var(--white);
         }
 
         .mvv-icon {
@@ -219,7 +217,7 @@
 
         .mvv-box h3 {
             font-size: 1.4rem;
-            color: var(--white);
+            color: var(--text-dark);
             margin-bottom: 1rem;
             font-weight: 700;
         }
@@ -248,7 +246,7 @@
             content: "⚡";
             position: absolute;
             left: 0;
-            color: var(--primary-color);
+            color: var(--accent-color);
             font-weight: bold;
         }
 
@@ -263,12 +261,12 @@
             text-align: center;
             font-size: 2.2rem;
             margin-bottom: 3.5rem;
-            color: var(--white);
+            color: var(--text-dark);
             font-weight: 800;
         }
 
         .section-title span {
-            color: #bae6fd;
+            color: var(--primary-color);
         }
 
         .grid-services {
@@ -278,7 +276,7 @@
         }
 
         .card-service {
-            background-color: var(--white);
+            background-color: rgba(255, 255, 255, 0.96);
             padding: 3rem 2rem;
             border-radius: 12px;
             box-shadow: var(--shadow-md);
@@ -288,13 +286,12 @@
             align-items: center;
             border-bottom: 4px solid transparent;
             transition: var(--transition);
-            color: var(--text-dark);
         }
 
         .card-service:hover {
             transform: translateY(-8px);
             box-shadow: var(--shadow-lg);
-            border-bottom-color: var(--primary-color);
+            border-bottom-color: var(--accent-color);
         }
 
         .card-service-img {
@@ -310,14 +307,14 @@
         }
 
         .card-service h3 {
-            color: var(--primary-color);
+            color: var(--text-dark);
             font-size: 1.4rem;
             font-weight: 700;
             margin-bottom: 1.2rem;
         }
 
         .card-service p {
-            color: #475569;
+            color: var(--text-muted);
             font-size: 0.95rem;
             margin-bottom: 0.8rem;
             line-height: 1.5;
@@ -330,14 +327,14 @@
 
         .card-service p::before {
             content: "⚡";
-            color: var(--primary-color);
+            color: var(--accent-color);
         }
 
         .card-service-btn {
             display: inline-block;
-            background-color: var(--primary-color);
+            background-color: transparent;
             border: 2px solid var(--primary-color);
-            color: var(--white);
+            color: var(--primary-color);
             padding: 0.6rem 2rem;
             border-radius: 6px;
             text-decoration: none;
@@ -349,20 +346,20 @@
         }
 
         .card-service-btn:hover {
-            background-color: var(--primary-hover);
-            border-color: var(--primary-hover);
+            background-color: var(--primary-color);
+            color: var(--white);
         }
 
         /* Sección Sectores */
         .sectors-section {
-            background-color: rgba(255, 255, 255, 0.05);
+            background-color: rgba(226, 232, 240, 0.8);
             padding: 5rem 1.5rem;
             text-align: center;
         }
 
         .sectors-section h2 {
             font-size: 2.2rem;
-            color: var(--white);
+            color: var(--text-dark);
             margin-bottom: 3.5rem;
             font-weight: 800;
         }
@@ -410,9 +407,9 @@
             font-weight: 700;
         }
 
-        /* Sección Especial: Mascota Chuchito (Fondo Azul Gris) */
+        /* Sección Especial: Mascota Chuchito */
         .mascot-section {
-            background: var(--bg-blue-grey); /* Cambiado a Azul Gris */
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
             color: var(--white);
             padding: 6rem 1.5rem;
             display: flex;
@@ -427,7 +424,7 @@
             grid-template-columns: 1fr 1.5fr;
             gap: 3.5rem;
             align-items: center;
-            background: #1e293b; /* Azul Gris Oscuro */
+            background: rgba(255, 255, 255, 0.03);
             padding: 3.5rem;
             border-radius: 24px;
             box-shadow: var(--shadow-lg);
@@ -440,9 +437,9 @@
             position: relative;
             border-radius: 20px;
             overflow: hidden;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.4);
             aspect-ratio: 1 / 1;
-            border: 4px solid var(--primary-color);
+            border: 4px solid var(--accent-color);
         }
 
         .mascot-img-real {
@@ -464,20 +461,20 @@
 
         .mascot-badge-pill {
             display: inline-block;
-            background-color: var(--primary-color);
-            color: var(--white);
+            background-color: var(--accent-color);
+            color: var(--text-dark);
             padding: 0.4rem 1.2rem;
             font-size: 0.8rem;
             font-weight: 800;
             border-radius: 50px;
             margin-bottom: 1rem;
             text-transform: uppercase;
-            box-shadow: 0 4px 10px rgba(0, 86, 179, 0.25);
+            box-shadow: 0 4px 10px rgba(255, 179, 0, 0.3);
         }
 
         .mascot-info h2 {
             font-size: 2.4rem;
-            color: var(--white);
+            color: var(--accent-color);
             font-weight: 800;
             margin-bottom: 0.5rem;
         }
@@ -487,7 +484,7 @@
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 1.5px;
-            color: var(--text-muted);
+            color: #94a3b8;
             margin-bottom: 1.5rem;
         }
 
@@ -500,20 +497,20 @@
 
         .mascot-footer-quote {
             font-style: italic;
-            color: #60a5fa; /* Celeste claro para resaltar */
+            color: var(--accent-color);
             font-size: 1.1rem;
             font-weight: 600;
-            border-left: 3px solid var(--primary-color);
+            border-left: 3px solid var(--accent-color);
             padding-left: 12px;
         }
 
-        /* Pie de Página con el mismo color del Logotipo */
+        /* Pie de Página con Fondo de Circuitos */
         footer {
-            background-color: var(--header-bg); 
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cpath d='M0 30 H30 V60 H70 V90 H100 M60 0 V40 H20 V80 H60 V100' stroke='%230056b3' stroke-width='1.2' fill='none' stroke-opacity='0.15'/%3E%3Ccircle cx='30' cy='30' r='2.5' fill='%230056b3' fill-opacity='0.3'/%3E%3C/svg%3E");
-            color: var(--text-muted);
+            background-color: #0f172a; 
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cpath d='M0 30 H30 V60 H70 V90 H100 M60 0 V40 H20 V80 H60 V100' stroke='%231e293b' stroke-width='1.2' fill='none'/%3E%3Ccircle cx='30' cy='30' r='2.5' fill='%23334155'/%3E%3C/svg%3E");
+            color: #94a3b8;
             padding: 4rem 1.5rem 2rem 1.5rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            border-top: 1px solid #1e293b;
         }
 
         .footer-content {
@@ -525,7 +522,7 @@
             gap: 2rem;
         }
 
-        /* Contenedor del Logo Inferior Gigante */
+        /* Contenedor del Logo Inferior Completamente Limpio (Sin fondo blanco) */
         .footer-logo-wrapper {
             display: flex;
             justify-content: center;
@@ -536,11 +533,11 @@
         }
 
         .footer-logo-wrapper:hover {
-            transform: scale(1.03);
+            transform: scale(1.04);
         }
 
         .footer-logo-img {
-            height: 210px; /* Tamaño del logo del footer ampliado */
+            height: 220px; /* Logotipo inferior maximizado sin fondo */
             width: auto;
             object-fit: contain;
         }
@@ -548,12 +545,11 @@
         .footer-contacts {
             font-size: 1rem;
             text-align: center;
-            border-top: 1px solid rgba(255, 255, 255, 0.08);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            border-top: 1px solid #1e293b;
+            border-bottom: 1px solid #1e293b;
             padding: 1.5rem 0;
             width: 100%;
             max-width: 600px;
-            color: var(--white);
         }
 
         .footer-contacts p {
@@ -569,7 +565,7 @@
         }
 
         .footer-contacts a {
-            color: #60a5fa;
+            color: var(--accent-color);
             text-decoration: none;
             transition: var(--transition);
         }
@@ -586,7 +582,7 @@
         }
 
         .social-link {
-            background-color: rgba(255, 255, 255, 0.05);
+            background-color: #1e293b;
             width: 44px;
             height: 44px;
             border-radius: 50%;
@@ -594,16 +590,11 @@
             align-items: center;
             justify-content: center;
             transition: var(--transition);
-            border: 1px solid rgba(255, 255, 255, 0.08);
         }
 
         .social-link:hover {
             background-color: var(--primary-color);
             transform: scale(1.1);
-        }
-
-        .social-link:hover .social-icon-svg {
-            fill: var(--white);
         }
 
         .social-link.instagram:hover {
@@ -614,7 +605,6 @@
             width: 20px;
             height: 20px;
             fill: var(--white);
-            transition: var(--transition);
         }
 
         .copyright-text {
@@ -667,7 +657,7 @@
                 margin-top: 1.5rem;
             }
             .logo-company-name {
-                font-size: 2.6rem;
+                font-size: 2.2rem;
             }
         }
     </style>
@@ -675,7 +665,7 @@
 <body>
 
     <header>
-        <!-- Enlace Superior Limpio: Logotipo Gigante Integrado con fondo exacto + Nombre CoRe en Azul Eléctrico -->
+        <!-- Enlace Superior Limpio: Logotipo Ampliado Sin Fondo + Nombre de la Empresa -->
         <a href="#inicio" class="header-logo-box">
             <img class="logo-img" src="logo.jfif2.png" alt="CoRe Logo">
             <span class="logo-company-name">CoRe</span>
@@ -695,7 +685,7 @@
         <a href="https://wa.me/524446687711?text=Hola%20CoRe,%20me%20gustar%C3%ADa%20cotizar%20un%20servicio" class="hero-btn" target="_blank">Cotizar por WhatsApp</a>
     </section>
 
-    <!-- Sección: Nosotros (Con fondo Azul Gris) -->
+    <!-- Sección: Nosotros -->
     <section class="about-section" id="nosotros">
         <div class="about-main-card">
             <h2>Quiénes Somos</h2>
@@ -800,7 +790,7 @@
         </div>
     </section>
 
-    <!-- Sección Exclusiva y Dedicada para Chuchito (Fondo Azul Gris) -->
+    <!-- Sección Exclusiva y Dedicada para Chuchito -->
     <section class="mascot-section" id="mascota">
         <div class="mascot-container">
             
@@ -821,11 +811,11 @@
         </div>
     </section>
 
-    <!-- Pie de Página integrado con el color del Logo -->
+    <!-- Pie de Página -->
     <footer id="contacto">
         <div class="footer-content">
             
-            <!-- Contenedor del Logotipo Inferior Gigante -->
+            <!-- Contenedor del Logotipo Inferior Puro y Limpio -->
             <div class="footer-logo-wrapper">
                 <img class="footer-logo-img" src="logo.jfif2.png" alt="CoRe Logo">
             </div>
